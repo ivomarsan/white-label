@@ -3112,7 +3112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:^2.15.3":
+"consola@npm:2.15.3, consola@npm:^2.15.3":
   version: 2.15.3
   resolution: "consola@npm:2.15.3"
   checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
@@ -4393,8 +4393,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "f1-steering-wheel@workspace:."
   dependencies:
-    consola: ^2.15.3
-    lerna: ^5.2.0
+    consola: 2.15.3
+    lerna: 5.5.0
   languageName: unknown
   linkType: soft
 
@@ -5732,7 +5732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lerna@npm:^5.2.0":
+"lerna@npm:5.5.0":
   version: 5.5.0
   resolution: "lerna@npm:5.5.0"
   dependencies:
@@ -9147,11 +9147,11 @@ __metadata:
 
 "typescript@patch:typescript@^3 || ^4#~builtin<compat/typescript>":
   version: 4.8.2
-  resolution: "typescript@patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5cb0f02f414f5405f4b0e7ee1fd7fa9177b6a8783c9017b6cad85f56ce4c4f93e0e6f2ce37e863cb597d44227cd009474c9fbd85bf7a50004e5557426cb58079
+  checksum: 6f49363af8af2fe480da1d5fa68712644438785208b06690a3cbe5e7365fd652c3a0f1e587bc8684d78fb69de3dde4de185c0bad7bb4f3664ddfc813ce8caad6
   languageName: node
   linkType: hard
 
