@@ -1,0 +1,15 @@
+{
+  "baseUrl": ".",
+  "compilerOptions": {
+    "composite": true
+  },
+  "paths": {
+    "@f1-steering-wheel/dashboard": ["./packages/dashboard"]
+  },
+  "references": [
+    {
+      "path": "./packages/dashboard"
+    }
+  ],
+  "exclude": ["node_modules", ".yarn"]
+}
