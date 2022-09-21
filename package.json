@@ -12,7 +12,7 @@
     "start": "yarn workspace @f1-steering-wheel/dashboard start"
   },
   "devDependencies": {
-    "lerna": "5.5.1"
+    "lerna": "5.5.2"
   },
   "dependencies": {
     "consola": "2.15.3"
