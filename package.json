@@ -1,5 +1,5 @@
 {
-  "name": "f1-steering-wheel",
+  "name": "white-label",
   "license": "MIT",
   "private": true,
   "packageManager": "yarn@3.2.4",
@@ -7,9 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace @f1-steering-wheel/dashboard build",
-    "dev": "yarn workspace @f1-steering-wheel/dashboard dev",
-    "start": "yarn workspace @f1-steering-wheel/dashboard start"
+    "build": "yarn workspace @white-label/dashboard build",
+    "dev": "yarn workspace @white-label/dashboard dev",
+    "start": "yarn workspace @white-label/dashboard start"
   },
   "devDependencies": {
     "lerna": "6.1.0"
