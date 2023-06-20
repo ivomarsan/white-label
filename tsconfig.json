@@ -4,11 +4,11 @@
     "composite": true
   },
   "paths": {
-    "@white-label/dashboard": ["./packages/dashboard"]
+    "@white-label/landing-page-1": ["./packages/landing-page-1"]
   },
   "references": [
     {
-      "path": "./packages/dashboard"
+      "path": "./packages/landing-page-1"
     }
   ],
   "exclude": ["node_modules", ".yarn"]

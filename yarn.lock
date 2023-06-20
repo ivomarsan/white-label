@@ -2580,11 +2580,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@white-label/dashboard@workspace:packages/dashboard":
+"@white-label/landing-page-1@workspace:packages/landing-page-1":
   version: 0.0.0-use.local
-  resolution: "@white-label/dashboard@workspace:packages/dashboard"
+  resolution: "@white-label/landing-page-1@workspace:packages/landing-page-1"
   dependencies:
-    nuxt: 3.0.0-rc.11
+    nuxt: 3.5.3
   languageName: unknown
   linkType: soft
 
