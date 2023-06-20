@@ -10,6 +10,9 @@
   "settings": {
     "nuxtr.defaultPackageManager": "Yarn",
     "nuxtr.openItemsAfterCreation": true,
-    "nuxtr.vueFiles.style.defaultLanguage": "scss"
+    "nuxtr.vueFiles.style.defaultLanguage": "scss",
+    "files.associations": {
+      "*.css": "tailwindcss"
+    }
   }
 }
