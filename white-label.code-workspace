@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "nuxtr.defaultPackageManager": "Yarn",
+    "nuxtr.openItemsAfterCreation": true,
+    "nuxtr.vueFiles.style.defaultLanguage": "scss"
+  }
+}
