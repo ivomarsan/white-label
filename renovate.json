@@ -1,7 +1,73 @@
 {
   "baseBranches": ["main"],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
   "prHourlyLimit": 3,
-  "labels": ["dependencies :arrow_up_down:"]
+  "labels": ["dependencies :arrow_up_down:"],
+  "extends": [
+    "config:base",
+    ":dependencyDashboard",
+    ":semanticCommitTypeAll(chore)",
+    ":pinAllExceptPeerDependencies",
+    ":disablePeerDependencies"
+  ],
+  "meteor": {
+    "enabled": false
+  },
+  "github-actions": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "enabled": true,
+      "enabledManagers": ["npm"],
+      "groupName": "All packages",
+      "groupSlug": "another-packs",
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "enabled": true,
+      "enabledManagers": ["npm"],
+      "groupName": "All Nuxt Framework packages",
+      "groupSlug": "nuxt",
+      "matchPackageNames": [
+        "nuxt",
+        "nuxt3",
+        "nuxt-edge",
+        "@nuxt/schema",
+        "@nuxt/kit",
+        "@nuxt/vite-builder",
+        "@nuxt/webpack-builder",
+        "@nuxt/test-utils",
+        "@nuxt/schema-edge",
+        "@nuxt/kit-edge",
+        "@nuxt/vite-builder-edge",
+        "@nuxt/webpack-builder-edge",
+        "@nuxt/test-utils-edge",
+        "@nuxt/babel-preset-app",
+        "@nuxt/builder",
+        "@nuxt/cli",
+        "@nuxt/config",
+        "@nuxt/core",
+        "@nuxt/generator",
+        "@nuxt/server",
+        "@nuxt/types",
+        "@nuxt/utils",
+        "@nuxt/vue-app",
+        "@nuxt/vue-renderer",
+        "@nuxt/webpack",
+        "@nuxt/babel-preset-app-edge",
+        "@nuxt/builder-edge",
+        "@nuxt/cli-edge",
+        "@nuxt/config-edge",
+        "@nuxt/core-edge",
+        "@nuxt/generator-edge",
+        "@nuxt/server-edge",
+        "@nuxt/types-edge",
+        "@nuxt/utils-edge",
+        "@nuxt/vue-app-edge",
+        "@nuxt/vue-renderer-edge",
+        "@nuxt/webpack-edge"
+      ]
+    }
+  ]
 }
