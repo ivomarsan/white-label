@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from "nuxt";
+import { defineNuxtConfig } from "nuxt/config";
 import BaseTSConfig from "./tsconfig.nuxt.json";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
