@@ -5,6 +5,17 @@ import BaseTSConfig from "./tsconfig.nuxt.json";
 export default defineNuxtConfig({
   ssr: false,
 
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
+  css: [
+    '@/assets/css/main.css',
+  ],
+
   typescript: {
     shim: true,
     strict: true,
