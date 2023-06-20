@@ -1,0 +1,13 @@
+{
+  /*
+    Search Settings
+  */
+  "search.exclude": {
+    "**/.git": true,
+    "**/.npmrc": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/.yarnrc.yml": true,
+    "**/yarn.lock": true
+  }
+}
