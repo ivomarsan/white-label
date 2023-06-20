@@ -12,7 +12,7 @@
     "start": "yarn workspace @white-label/landing-page-1 start"
   },
   "devDependencies": {
-    "lerna": "6.6.2"
+    "lerna": "7.0.2"
   },
   "dependencies": {
     "consola": "2.15.3"
