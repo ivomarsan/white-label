@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "./packages/landing-page-1"
     }
   ],
   "settings": {
