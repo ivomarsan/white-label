@@ -1979,14 +1979,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@white-label/landing-page-1@workspace:packages/landing-page-1"
   dependencies:
-    autoprefixer: ^10.4.14
+    autoprefixer: 10.4.14
     nuxt: 3.5.3
-    postcss: ^8.4.24
-    prettier: ^2.8.8
-    prettier-plugin-tailwindcss: ^0.3.0
-    stylelint: ^15.8.0
-    stylelint-config-standard: ^33.0.0
-    tailwindcss: ^3.3.2
+    postcss: 8.4.24
+    prettier: 2.8.8
+    prettier-plugin-tailwindcss: 0.3.0
+    stylelint: 15.8.0
+    stylelint-config-standard: 33.0.0
+    tailwindcss: 3.3.2
     vue-tsc: 1.8.1
   languageName: unknown
   linkType: soft
@@ -2357,7 +2357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.14":
+"autoprefixer@npm:10.4.14, autoprefixer@npm:^10.4.14":
   version: 10.4.14
   resolution: "autoprefixer@npm:10.4.14"
   dependencies:
@@ -8080,6 +8080,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.4.24, postcss@npm:^8.4.23, postcss@npm:^8.4.24":
+  version: 8.4.24
+  resolution: "postcss@npm:8.4.24"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 814e2126dacfea313588eda09cc99a9b4c26ec55c059188aa7a916d20d26d483483106dc5ff9e560731b59f45c5bb91b945dfadc670aed875cc90ddbbf4e787d
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.1.10":
   version: 8.4.16
   resolution: "postcss@npm:8.4.16"
@@ -8091,18 +8102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.24":
-  version: 8.4.24
-  resolution: "postcss@npm:8.4.24"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 814e2126dacfea313588eda09cc99a9b4c26ec55c059188aa7a916d20d26d483483106dc5ff9e560731b59f45c5bb91b945dfadc670aed875cc90ddbbf4e787d
-  languageName: node
-  linkType: hard
-
-"prettier-plugin-tailwindcss@npm:^0.3.0":
+"prettier-plugin-tailwindcss@npm:0.3.0":
   version: 0.3.0
   resolution: "prettier-plugin-tailwindcss@npm:0.3.0"
   peerDependencies:
@@ -8157,7 +8157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.8":
+"prettier@npm:2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -9259,7 +9259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-standard@npm:^33.0.0":
+"stylelint-config-standard@npm:33.0.0":
   version: 33.0.0
   resolution: "stylelint-config-standard@npm:33.0.0"
   dependencies:
@@ -9270,7 +9270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^15.8.0":
+"stylelint@npm:15.8.0":
   version: 15.8.0
   resolution: "stylelint@npm:15.8.0"
   dependencies:
@@ -9417,7 +9417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.3.2":
+"tailwindcss@npm:3.3.2":
   version: 3.3.2
   resolution: "tailwindcss@npm:3.3.2"
   dependencies:
