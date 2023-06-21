@@ -6,8 +6,10 @@
   </header>
 </template>
 
-<style module>
+<style lang="postcss" module>
 .container {
+  @apply flex;
+
   position: fixed;
   left: 0;
   right: 0;
