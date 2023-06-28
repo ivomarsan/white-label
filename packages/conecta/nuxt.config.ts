@@ -7,14 +7,13 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
+      "tailwindcss/nesting": "postcss-nesting",
       tailwindcss: {},
       autoprefixer: {},
     },
   },
 
-  css: [
-    '@/assets/css/main.css',
-  ],
+  css: ["@/assets/css/main.css"],
 
   typescript: {
     shim: true,

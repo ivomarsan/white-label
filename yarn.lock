@@ -519,7 +519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/selector-specificity@npm:^2.2.0":
+"@csstools/selector-specificity@npm:^2.0.0, @csstools/selector-specificity@npm:^2.2.0":
   version: 2.2.0
   resolution: "@csstools/selector-specificity@npm:2.2.0"
   peerDependencies:
@@ -2179,6 +2179,7 @@ __metadata:
     nuxt: 3.6.1
     postcss: 8.4.24
     postcss-html: ^1.5.0
+    postcss-nesting: ^11.3.0
     prettier: 2.8.8
     prettier-plugin-tailwindcss: 0.3.0
     stylelint: 15.9.0
@@ -8279,6 +8280,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-nesting@npm:^11.3.0":
+  version: 11.3.0
+  resolution: "postcss-nesting@npm:11.3.0"
+  dependencies:
+    "@csstools/selector-specificity": ^2.0.0
+    postcss-selector-parser: ^6.0.10
+  peerDependencies:
+    postcss: ^8.4
+  checksum: bc8f59e8114f21ec3fcbd0661072f3e706f25dc5300a925863485a0ab82950c48b75c1fed9548acddc924fa479ab7277b55fcdcc33eb0fe1742b389683479384
+  languageName: node
+  linkType: hard
+
 "postcss-normalize-charset@npm:^6.0.0":
   version: 6.0.0
   resolution: "postcss-normalize-charset@npm:6.0.0"
@@ -8428,7 +8441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13":
+"postcss-selector-parser@npm:^6.0.10, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13":
   version: 6.0.13
   resolution: "postcss-selector-parser@npm:6.0.13"
   dependencies:
