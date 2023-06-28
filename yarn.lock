@@ -2171,9 +2171,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@white-label/landing-page-1@workspace:packages/landing-page-1":
+"@white-label/conecta@workspace:packages/conecta":
   version: 0.0.0-use.local
-  resolution: "@white-label/landing-page-1@workspace:packages/landing-page-1"
+  resolution: "@white-label/conecta@workspace:packages/conecta"
   dependencies:
     autoprefixer: 10.4.14
     nuxt: 3.6.1
