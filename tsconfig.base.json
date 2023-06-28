@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ES2018",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "composite": true,
+    "typeRoots": ["./packages/types", "./node_modules/@types"]
+  },
+  "references": [{ "path": "../" }]
+}
