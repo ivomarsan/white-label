@@ -6,6 +6,8 @@
       <div :class="$style.logo">
         <span>Header</span>
       </div>
+
+      <HeaderMenu :class="$style.menu" />
     </header>
 
     <HeaderCover>
@@ -20,6 +22,8 @@
 }
 
 .header {
+  @apply flex;
+
   position: fixed;
   left: 0;
   right: 0;
@@ -28,5 +32,9 @@
 
 .logo {
   color: white;
+}
+
+.menu {
+  @apply flex;
 }
 </style>
