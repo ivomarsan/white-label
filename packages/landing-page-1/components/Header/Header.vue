@@ -1,15 +1,25 @@
+<script setup lang="ts"></script>
+
 <template>
-  <header :class="$style.container">
-    <div :class="$style.logo">
-      <span>Header</span>
-    </div>
-  </header>
+  <section :class="$style.container">
+    <header :class="$style.header">
+      <div :class="$style.logo">
+        <span>Header</span>
+      </div>
+    </header>
+
+    <HeaderCover>
+      <h1>Teste</h1>
+    </HeaderCover>
+  </section>
 </template>
 
 <style module>
 .container {
-  @apply flex;
+  @apply flex flex-col;
+}
 
+.header {
   position: fixed;
   left: 0;
   right: 0;
