@@ -2178,9 +2178,11 @@ __metadata:
     autoprefixer: 10.4.14
     nuxt: 3.6.1
     postcss: 8.4.24
+    postcss-html: ^1.5.0
     prettier: 2.8.8
     prettier-plugin-tailwindcss: 0.3.0
     stylelint: 15.9.0
+    stylelint-config-recommended-vue: ^1.4.0
     stylelint-config-standard: 33.0.0
     tailwindcss: 3.3.2
     vue-tsc: 1.8.2
@@ -4022,7 +4024,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^4.2.0":
+"entities@npm:^4.2.0, entities@npm:^4.4.0":
   version: 4.5.0
   resolution: "entities@npm:4.5.0"
   checksum: 853f8ebd5b425d350bffa97dd6958143179a5938352ccae092c62d1267c4e392a039be1bae7d51b6e4ffad25f51f9617531fedf5237f15df302ccfb452cbf2d7
@@ -5209,6 +5211,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"htmlparser2@npm:^8.0.0":
+  version: 8.0.2
+  resolution: "htmlparser2@npm:8.0.2"
+  dependencies:
+    domelementtype: ^2.3.0
+    domhandler: ^5.0.3
+    domutils: ^3.0.1
+    entities: ^4.4.0
+  checksum: 29167a0f9282f181da8a6d0311b76820c8a59bc9e3c87009e21968264c2987d2723d6fde5a964d4b7b6cba663fca96ffb373c06d8223a85f52a6089ced942700
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.0":
   version: 4.1.0
   resolution: "http-cache-semantics@npm:4.1.0"
@@ -5855,6 +5869,13 @@ __metadata:
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
   checksum: 8a95213a5a77deb6cbe94d86340e8d9ace2b93bc367790b260101d2f36a2eaf4e4e22d9fa9cf459b38af3a32fb4190e638024cf82ec95ef708680e405ea7cc78
+  languageName: node
+  linkType: hard
+
+"js-tokens@npm:^8.0.0":
+  version: 8.0.1
+  resolution: "js-tokens@npm:8.0.1"
+  checksum: fb7bcd476c5b902ffb766382ca85aecb86ec66a607e419377026293b5877774e465f6cbe4229c8d85db3776ccc91c3aee518a0e04a005e260e57353f6f9278a8
   languageName: node
   linkType: hard
 
@@ -8103,6 +8124,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-html@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "postcss-html@npm:1.5.0"
+  dependencies:
+    htmlparser2: ^8.0.0
+    js-tokens: ^8.0.0
+    postcss: ^8.4.0
+    postcss-safe-parser: ^6.0.0
+  checksum: 33c2b7aeaed0f245e34ba80f6e2094d064b73e4087554991ea53556c4ef1a0f1633ef23265369265c959c282b4ec45e6485135177e75f8ff3a62f9704793410d
+  languageName: node
+  linkType: hard
+
 "postcss-import-resolver@npm:^2.0.0":
   version: 2.0.0
   resolution: "postcss-import-resolver@npm:2.0.0"
@@ -8459,7 +8492,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.24, postcss@npm:^8.4.23, postcss@npm:^8.4.24":
+"postcss@npm:8.4.24, postcss@npm:^8.4.0, postcss@npm:^8.4.23, postcss@npm:^8.4.24":
   version: 8.4.24
   resolution: "postcss@npm:8.4.24"
   dependencies:
@@ -9665,7 +9698,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended@npm:^12.0.0":
+"stylelint-config-html@npm:>=1.0.0":
+  version: 1.1.0
+  resolution: "stylelint-config-html@npm:1.1.0"
+  peerDependencies:
+    postcss-html: ^1.0.0
+    stylelint: ">=14.0.0"
+  checksum: d1b01043bcb07e33f826a59a0a22db762c07930d68e2c2c3a538aa8b0e02dc64b44abbb40e9a7583e053c04bbf18b167cbb1b714e343ef5bbe68b96860273480
+  languageName: node
+  linkType: hard
+
+"stylelint-config-recommended-vue@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "stylelint-config-recommended-vue@npm:1.4.0"
+  dependencies:
+    semver: ^7.3.5
+    stylelint-config-html: ">=1.0.0"
+    stylelint-config-recommended: ">=6.0.0"
+  peerDependencies:
+    postcss-html: ^1.0.0
+    stylelint: ">=14.0.0"
+  checksum: f23f8090f676c47b8cb2c371ba0d8c749f36f85291e26f5ba0a7fb29629d4455a911f236c7bcffbe5e8a3a56c2dcf76da0de6541317e807780061a9b4b702cd6
+  languageName: node
+  linkType: hard
+
+"stylelint-config-recommended@npm:>=6.0.0, stylelint-config-recommended@npm:^12.0.0":
   version: 12.0.0
   resolution: "stylelint-config-recommended@npm:12.0.0"
   peerDependencies:

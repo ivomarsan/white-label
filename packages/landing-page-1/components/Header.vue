@@ -6,7 +6,7 @@
   </header>
 </template>
 
-<style lang="postcss" module>
+<style module>
 .container {
   @apply flex;
 
