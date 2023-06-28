@@ -4,7 +4,7 @@
   <section :class="$style.container">
     <header :class="$style.header">
       <div :class="$style.logo">
-        <span>Header</span>
+        <img src="@/public/logo.png" alt="Conecta Logo" />
       </div>
 
       <HeaderMenu :class="$style.menu" />
@@ -22,7 +22,7 @@
 }
 
 .header {
-  @apply flex;
+  @apply flex items-center justify-between;
 
   position: fixed;
   left: 0;
@@ -31,7 +31,7 @@
 }
 
 .logo {
-  color: white;
+  max-width: 15rem;
 }
 
 .menu {
