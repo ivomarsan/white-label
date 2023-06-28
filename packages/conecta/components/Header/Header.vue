@@ -4,7 +4,7 @@
   <section :class="$style.container">
     <header :class="$style.header">
       <div :class="$style.logo">
-        <img src="@/public/logo.png" alt="Conecta Logo" />
+        <img src="@/src/logo.png" alt="Conecta Logo" />
       </div>
 
       <HeaderMenu :class="$style.menu" />
