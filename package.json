@@ -7,9 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace @white-label/landing-page-1 build",
-    "dev": "yarn workspace @white-label/landing-page-1 dev",
-    "start": "yarn workspace @white-label/landing-page-1 start"
+    "build": "yarn workspace @white-label/conecta build",
+    "dev": "yarn workspace @white-label/conecta dev",
+    "start": "yarn workspace @white-label/conecta start"
   },
   "devDependencies": {
     "lerna": "7.1.0"

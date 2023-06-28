@@ -4,11 +4,11 @@
     "composite": true
   },
   "paths": {
-    "@white-label/landing-page-1": ["./packages/landing-page-1"]
+    "@white-label/conecta": ["./packages/conecta"]
   },
   "references": [
     {
-      "path": "./packages/landing-page-1"
+      "path": "./packages/conecta"
     }
   ],
   "exclude": ["node_modules", ".yarn"]
