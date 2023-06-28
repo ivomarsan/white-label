@@ -13,8 +13,5 @@
   },
   "devDependencies": {
     "lerna": "7.1.0"
-  },
-  "dependencies": {
-    "consola": "3.2.1"
   }
 }

@@ -3279,13 +3279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:3.2.1":
-  version: 3.2.1
-  resolution: "consola@npm:3.2.1"
-  checksum: 359f19c5b73624cae50c3e78507612d5dd8a8b7750b0d5e0e66ece508d4fddf2a48796c0fd3085fbe2c98aa1fd930a024468ab374bc252b973564261a9379781
-  languageName: node
-  linkType: hard
-
 "consola@npm:^3.0.1, consola@npm:^3.1.0":
   version: 3.1.0
   resolution: "consola@npm:3.1.0"
@@ -10834,7 +10827,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "white-label@workspace:."
   dependencies:
-    consola: 3.2.1
     lerna: 7.1.0
   languageName: unknown
   linkType: soft
