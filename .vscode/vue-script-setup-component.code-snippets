@@ -1,0 +1,22 @@
+{
+  "Vue Script TS Base": {
+    "prefix": "vue-script-ts-base",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "$0",
+      "</script>",
+      "",
+      "<template>",
+      "  <div :class=\"$$style.container\"></div>",
+      "</template>",
+      "",
+      "<style module>",
+      ".container {",
+      "  @apply flex;",
+      "}",
+      "</style>",
+      ""
+    ],
+    "description": "Create vue script setup component template"
+  }
+}
