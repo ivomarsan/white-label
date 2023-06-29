@@ -11,5 +11,6 @@
 <style module>
 .cta {
   @apply flex;
+  @apply m-2;
 }
 </style>
