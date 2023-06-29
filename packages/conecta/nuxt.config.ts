@@ -1,5 +1,6 @@
-import { defineNuxtConfig } from "nuxt/config";
-import BaseTSConfig from "./tsconfig.nuxt.json";
+import { defineNuxtConfig } from 'nuxt/config';
+import svgLoader from 'vite-svg-loader';
+import BaseTSConfig from './tsconfig.nuxt.json';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -7,13 +8,13 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      "tailwindcss/nesting": "postcss-nesting",
+      'tailwindcss/nesting': 'postcss-nesting',
       tailwindcss: {},
       autoprefixer: {},
     },
   },
 
-  css: ["@/assets/css/main.css"],
+  css: ['@/assets/css/main.css'],
 
   typescript: {
     shim: true,
@@ -23,7 +24,7 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    plugins: [],
+    plugins: [svgLoader()],
     vue: {
       script: {
         defineModel: true,
