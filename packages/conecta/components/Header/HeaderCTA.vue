@@ -1,11 +1,12 @@
 <template>
   <Button
     :class="$style.cta"
-    color-background="#05005b"
-    color-text="#cccccc"
+    color-background="#ccc"
+    color-text="#05005b"
     enable-hover-effect
-    outline
-  />
+  >
+    <span>Entrar em Contato</span>
+  </Button>
 </template>
 
 <style module>
