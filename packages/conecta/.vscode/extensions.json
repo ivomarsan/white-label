@@ -6,6 +6,6 @@
     "vue.vscode-typescript-vue-plugin",
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
-    "vunguyentuan.vscode-postcss"
+    "csstools.postcss"
   ]
 }
