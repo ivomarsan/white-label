@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import CurveShapeSVG from '@/assets/svgs/curve-shape.svg';
+import WaveSVG from '@/assets/svgs/wave.svg';
 
-type CurveShape = 'on' | 'off' | 'no-effect';
+type Wave = 'on' | 'off' | 'no-effect';
 
 interface Props {
   fullscreen?: boolean;
-  curveShape?: CurveShape;
+  wave?: Wave;
 }
 
-const { fullscreen = false, curveShape = 'off' } = defineProps<Props>();
+const { fullscreen = false, wave = 'off' } = defineProps<Props>();
 
 const isFullscreen = computed<boolean>(() => {
   return !!fullscreen;
 });
 
-const isCurveShapeVisible = computed<boolean>(() => {
-  return curveShape !== 'off';
+const isWaveVisible = computed<boolean>(() => {
+  return wave !== 'off';
 });
 
-const isCurveShapeEffectEnable = computed<boolean>(() => {
-  return !!isCurveShapeVisible.value && curveShape !== 'no-effect';
+const isWaveEffectEnable = computed<boolean>(() => {
+  return !!isWaveVisible.value && wave !== 'no-effect';
 });
 </script>
 
@@ -38,22 +38,22 @@ const isCurveShapeEffectEnable = computed<boolean>(() => {
     </div>
 
     <div
-      v-if="isCurveShapeVisible"
+      v-if="isWaveVisible"
       :class="[
-        $style.curveShape,
+        $style.wave,
         {
-          [$style.enableEffect]: isCurveShapeEffectEnable,
+          [$style.enableEffect]: isWaveEffectEnable,
         },
       ]"
     >
-      <CurveShapeSVG />
+      <WaveSVG />
     </div>
   </div>
 </template>
 
 <style module>
 .container {
-  @apply flex flex-col justify-between;
+  @apply flex flex-col items-center justify-between;
 
   background-image: url('@/assets/images/background-header-cover.webp');
   background-position: 50%;
@@ -67,5 +67,17 @@ const isCurveShapeEffectEnable = computed<boolean>(() => {
 
 .inner {
   @apply flex flex-col;
+
+  max-width: 800px;
+  width: 100%;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+
+  &.enableEffect {
+    display: block;
+  }
 }
 </style>
