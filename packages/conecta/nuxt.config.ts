@@ -21,4 +21,14 @@ export default defineNuxtConfig({
     tsConfig: BaseTSConfig,
     typeCheck: true,
   },
+
+  vite: {
+    plugins: [],
+    vue: {
+      script: {
+        defineModel: true,
+        propsDestructure: true,
+      },
+    },
+  },
 });
