@@ -2,19 +2,25 @@
 import { computed } from 'vue';
 import CurveShapeSVG from '@/assets/svgs/curve-shape.svg';
 
+type CurveShape = 'on' | 'off' | 'no-effect';
+
 interface Props {
   fullscreen?: boolean;
-  enableCurveShape?: boolean;
+  curveShape?: CurveShape;
 }
 
-const { fullscreen = false, enableCurveShape = false } = defineProps<Props>();
+const { fullscreen = false, curveShape = 'off' } = defineProps<Props>();
 
 const isFullscreen = computed<boolean>(() => {
   return !!fullscreen;
 });
 
 const isCurveShapeVisible = computed<boolean>(() => {
-  return !!enableCurveShape;
+  return curveShape !== 'off';
+});
+
+const isCurveShapeEffectEnable = computed<boolean>(() => {
+  return !!isCurveShapeVisible.value && curveShape !== 'no-effect';
 });
 </script>
 
@@ -33,7 +39,12 @@ const isCurveShapeVisible = computed<boolean>(() => {
 
     <div
       v-if="isCurveShapeVisible"
-      :class="$style.curveShape"
+      :class="[
+        $style.curveShape,
+        {
+          [$style.enableEffect]: isCurveShapeEffectEnable,
+        },
+      ]"
     >
       <CurveShapeSVG />
     </div>
