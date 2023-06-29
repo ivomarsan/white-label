@@ -73,11 +73,26 @@ const isWaveEffectEnable = computed<boolean>(() => {
 }
 
 .wave {
-  display: block;
   width: 100%;
 
   &.enableEffect {
-    display: block;
+    overflow-x: hidden;
+
+    & svg {
+      width: 200%;
+      position: relative;
+      animation: move-left 5s linear infinite;
+    }
+  }
+}
+
+@keyframes move-left {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
   }
 }
 </style>
