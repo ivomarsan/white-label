@@ -55,7 +55,7 @@ const isCurveShapeEffectEnable = computed<boolean>(() => {
 .container {
   @apply flex flex-col justify-between;
 
-  background-image: url('@/assets/images/background-header-cover.jpg');
+  background-image: url('@/assets/images/background-header-cover.webp');
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
