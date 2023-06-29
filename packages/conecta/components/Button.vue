@@ -2,11 +2,16 @@
 import { computed } from 'vue';
 
 interface Props {
-  accent?: string;
+  colorBackground?: string;
+  colorText?: string;
   outline?: boolean;
 }
 
-const { accent = '#338033', outline = false } = defineProps<Props>();
+const {
+  colorBackground = '#338033',
+  colorText = '#cccccc',
+  outline = false,
+} = defineProps<Props>();
 
 const isOutline = computed<boolean>(() => {
   return !!outline;
@@ -30,9 +35,9 @@ const isOutline = computed<boolean>(() => {
 }
 
 .button {
-  background: v-bind(accent);
+  background: v-bind(colorBackground);
   position: relative;
-  color: #ccc;
+  color: v-bind(colorText);
   min-width: 10rem;
   min-height: 4rem;
   border: none;
@@ -74,7 +79,7 @@ const isOutline = computed<boolean>(() => {
   }
 
   &:hover {
-    background: v-bind(accent);
+    background: v-bind(colorBackground);
     cursor: pointer;
 
     &::before {
@@ -91,7 +96,7 @@ const isOutline = computed<boolean>(() => {
   }
 
   &.isOutline {
-    border: 1px solid v-bind(accent);
+    border: 1px solid v-bind(colorBackground);
     background: none;
   }
 }
