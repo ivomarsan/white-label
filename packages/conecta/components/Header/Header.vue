@@ -3,9 +3,7 @@
 <template>
   <section :class="$style.container">
     <header :class="$style.header">
-      <div :class="$style.logo">
-        <img src="@/src/logo.png" alt="Conecta Logo" />
-      </div>
+      <HeaderLogo />
 
       <HeaderMenu :class="$style.menu" />
     </header>
@@ -28,10 +26,6 @@
   left: 0;
   right: 0;
   background-color: red;
-}
-
-.logo {
-  max-width: 15rem;
 }
 
 .menu {
