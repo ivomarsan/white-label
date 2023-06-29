@@ -6,6 +6,8 @@
       <HeaderLogo />
 
       <HeaderMenu :class="$style.menu" />
+
+      <HeaderCTA />
     </header>
 
     <HeaderCover>
