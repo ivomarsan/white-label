@@ -36,7 +36,7 @@ const isHoverEffectEnabled = computed<boolean>(() => {
       ]"
       type="button"
     >
-      <span>Hover Me</span>
+      <slot />
     </button>
   </div>
 </template>
@@ -47,6 +47,8 @@ const isHoverEffectEnabled = computed<boolean>(() => {
 }
 
 .button {
+  @apply p-4;
+
   background-color: v-bind(colorBackground);
   position: relative;
   color: v-bind(colorText);
