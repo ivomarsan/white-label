@@ -13,8 +13,11 @@
     <HeaderCover
       :class="$style.cover"
       fullscreen
+      wave="on"
     >
-      <h1>Treinamento para vida</h1>
+      <div :class="$style.content">
+        <h1 :class="$style.title">Treinamento para vida</h1>
+      </div>
     </HeaderCover>
   </section>
 </template>
@@ -41,6 +44,17 @@
 
 .cover {
   padding-top: var(--header-height);
+}
+
+.content {
+  @apply flex flex-col items-center;
+  @apply w-full;
+  @apply mt-20;
+}
+.title {
+  @apply text-5xl font-bold;
+
+  color: #ffffff;
 }
 
 .menu {
