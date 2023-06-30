@@ -53,7 +53,10 @@ const isWaveEffectEnable = computed<boolean>(() => {
 
 <style module>
 .container {
-  @apply flex flex-col items-center justify-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
   background-image: url('@/assets/images/background-header-cover.webp');
   background-position: 50%;
@@ -66,8 +69,8 @@ const isWaveEffectEnable = computed<boolean>(() => {
 }
 
 .inner {
-  @apply flex flex-col;
-
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
   width: 100%;
 }
