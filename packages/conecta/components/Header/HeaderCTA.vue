@@ -1,9 +1,9 @@
 <template>
   <Button
+    background-color="#ccc"
     :class="$style.cta"
-    color-background="#ccc"
-    color-text="#05005b"
     enable-hover-effect
+    text-color="#05005b"
   >
     <span>Entrar em Contato</span>
   </Button>

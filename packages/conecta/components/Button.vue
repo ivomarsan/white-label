@@ -2,15 +2,15 @@
 import { computed } from 'vue';
 
 interface Props {
-  colorBackground?: string;
-  colorText?: string;
+  backgroundColor?: string;
+  textColor?: string;
   outline?: boolean;
   enableHoverEffect?: boolean;
 }
 
 const {
-  colorBackground = '#338033',
-  colorText = '#cccccc',
+  backgroundColor = '#338033',
+  textColor = '#cccccc',
   outline = false,
   enableHoverEffect = false,
 } = defineProps<Props>();
@@ -49,9 +49,9 @@ const isHoverEffectEnabled = computed<boolean>(() => {
 .button {
   @apply p-4;
 
-  background-color: v-bind(colorBackground);
+  background-color: v-bind(backgroundColor);
   position: relative;
-  color: v-bind(colorText);
+  color: v-bind(textColor);
   min-width: 10rem;
   min-height: 4rem;
   border: none;
@@ -69,11 +69,11 @@ const isHoverEffectEnabled = computed<boolean>(() => {
   }
 
   &.isOutline {
-    border: 1px solid v-bind(colorBackground);
+    border: 1px solid v-bind(backgroundColor);
     background-color: transparent;
 
     &:hover {
-      background-color: v-bind(colorBackground);
+      background-color: v-bind(backgroundColor);
     }
   }
 
