@@ -7,9 +7,14 @@ type Wave = 'on' | 'off' | 'no-effect';
 interface Props {
   fullscreen?: boolean;
   wave?: Wave;
+  backgroundWaveColor?: string;
 }
 
-const { fullscreen = false, wave = 'off' } = defineProps<Props>();
+const {
+  fullscreen = false,
+  wave = 'off',
+  backgroundWaveColor = '#ffffff',
+} = defineProps<Props>();
 
 const isFullscreen = computed<boolean>(() => {
   return !!fullscreen;
@@ -77,6 +82,10 @@ const isWaveEffectEnable = computed<boolean>(() => {
 
 .wave {
   width: 100%;
+
+  svg path {
+    fill: v-bind(backgroundWaveColor);
+  }
 
   &.enableEffect {
     overflow-x: hidden;
