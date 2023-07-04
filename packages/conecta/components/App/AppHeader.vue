@@ -15,7 +15,17 @@
       wave="on"
     >
       <div :class="$style.content">
-        <h1 :class="$style.title">Treinamento para vida</h1>
+        <h1 :class="$style.title">
+          <span>Treinamentos para vida</span>
+        </h1>
+
+        <h2 :class="$style.subtitle">
+          <span
+            >Somos uma empresa gestora de treinamentos para a vida. Para isso,
+            nós conectamos quem precisa de treinamentos com os maiores
+            especialistas em segurança de todo o Brasil.</span
+          >
+        </h2>
       </div>
     </HeaderCover>
   </section>
@@ -50,8 +60,16 @@
   @apply w-full;
   @apply mb-40 mt-40;
 }
+
 .title {
   @apply text-5xl font-bold;
+
+  color: #ffffff;
+}
+
+.subtitle {
+  @apply text-center text-xl font-light;
+  @apply mt-8;
 
   color: #ffffff;
 }
