@@ -76,12 +76,12 @@ function getImage(src: Props['src']) {
 
   &.hasBorderLeft {
     border-radius: 16px 16px 16px 15vw;
-    border-left-width: 2vw;
+    border-left-width: 1vw;
   }
 
   &.hasBorderRight {
     border-radius: 16px 16px 15vw 16px;
-    border-right-width: 2vw;
+    border-right-width: 1vw;
   }
 }
 </style>
