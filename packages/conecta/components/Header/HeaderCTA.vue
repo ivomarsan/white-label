@@ -1,12 +1,12 @@
 <template>
-  <Button
+  <AppButton
     background-color="#ccc"
     :class="$style.cta"
     enable-hover-effect
     text-color="#05005b"
   >
     <span>Entrar em Contato</span>
-  </Button>
+  </AppButton>
 </template>
 
 <style module>

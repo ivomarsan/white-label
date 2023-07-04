@@ -1,9 +1,9 @@
 <template>
   <main>
-    <Header />
+    <AppHeader />
 
     <NuxtWelcome />
 
-    <Footer />
+    <AppFooter />
   </main>
 </template>
