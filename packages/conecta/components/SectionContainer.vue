@@ -118,7 +118,7 @@ const isColumnsReversed = computed<boolean>(() => {
   @apply mt-4;
 
   &:before {
-    @apply font-bold;
+    @apply text-xl font-bold;
 
     content: counter(item) '. ';
     counter-increment: item;
