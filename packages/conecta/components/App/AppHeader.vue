@@ -1,7 +1,24 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Props {
+  fixed?: boolean;
+}
+
+const { fixed } = defineProps<Props>();
+
+const isFixed = computed<boolean>(() => {
+  return !!fixed;
+});
+</script>
 
 <template>
-  <section :class="$style.container">
+  <section
+    :class="[
+      $style.container,
+      {
+        [$style.isFixed]: isFixed,
+      },
+    ]"
+  >
     <header :class="$style.header">
       <HeaderLogo />
 
@@ -43,12 +60,16 @@
 .header {
   @apply flex items-center justify-between;
 
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   height: var(--header-height);
   max-width: var(--max-content-width);
   margin: 0 auto;
+
+  &.isFixed {
+    position: fixed;
+  }
 }
 
 .cover {
