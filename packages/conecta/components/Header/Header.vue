@@ -12,7 +12,6 @@
 
     <HeaderCover
       :class="$style.cover"
-      fullscreen
       wave="on"
     >
       <div :class="$style.content">
@@ -49,7 +48,7 @@
 .content {
   @apply flex flex-col items-center;
   @apply w-full;
-  @apply mt-20;
+  @apply mb-40 mt-40;
 }
 .title {
   @apply text-5xl font-bold;
