@@ -8,9 +8,15 @@ interface Props {
   title?: string;
   description?: string | string[];
   titleAlign?: TitleAlign;
+  backgroundColor?: string;
 }
 
-const { title, description, titleAlign = 'left' } = defineProps<Props>();
+const {
+  title,
+  description,
+  titleAlign = 'left',
+  backgroundColor = '#ffffff',
+} = defineProps<Props>();
 
 const { themeColors } = useTheme();
 
@@ -37,49 +43,53 @@ const isColumnsReversed = computed<boolean>(() => {
 
 <template>
   <slot name="container">
-    <section
-      :class="[
-        $style.container,
-        {
-          [$style.isColumnsReversed]: isColumnsReversed,
-        },
-      ]"
-    >
-      <div>
-        <slot :name="isColumnsReversed ? 'last-column' : 'first-column'">
-          <slot name="title">
-            <h1
-              v-if="hasTitle"
-              :class="$style.title"
-            >
-              <span>{{ title }}</span>
-            </h1>
-          </slot>
-
-          <slot name="description">
-            <div
-              v-if="hasDescription"
-              :class="$style.description"
-            >
-              <ol
-                v-if="isDescriptionList"
-                :class="$style.descriptionList"
-              >
-                <template
-                  v-for="(text, index) in description"
-                  :key="index"
+    <section :class="$style.container">
+      <div
+        :class="[
+          $style.inner,
+          {
+            [$style.isColumnsReversed]: isColumnsReversed,
+          },
+        ]"
+      >
+        <slot name="inner">
+          <div>
+            <slot :name="isColumnsReversed ? 'last-column' : 'first-column'">
+              <slot name="title">
+                <h1
+                  v-if="hasTitle"
+                  :class="$style.title"
                 >
-                  <li :class="$style.descriptionItem">{{ text }}</li>
-                </template>
-              </ol>
-            </div>
-          </slot>
-        </slot>
-      </div>
+                  <span>{{ title }}</span>
+                </h1>
+              </slot>
 
-      <div>
-        <slot :name="isColumnsReversed ? 'first-column' : 'last-column'">
-          <slot name="image"> </slot>
+              <slot name="description">
+                <div
+                  v-if="hasDescription"
+                  :class="$style.description"
+                >
+                  <ol
+                    v-if="isDescriptionList"
+                    :class="$style.descriptionList"
+                  >
+                    <template
+                      v-for="(text, index) in description"
+                      :key="index"
+                    >
+                      <li :class="$style.descriptionItem">{{ text }}</li>
+                    </template>
+                  </ol>
+                </div>
+              </slot>
+            </slot>
+          </div>
+
+          <div>
+            <slot :name="isColumnsReversed ? 'first-column' : 'last-column'">
+              <slot name="image"> </slot>
+            </slot>
+          </div>
         </slot>
       </div>
     </section>
@@ -88,11 +98,17 @@ const isColumnsReversed = computed<boolean>(() => {
 
 <style module>
 .container {
+  @apply flex justify-center;
+  @apply py-14;
+
+  background-color: v-bind(backgroundColor);
+}
+
+.inner {
   @apply flex justify-between;
-  @apply gap-14 py-14;
+  @apply gap-14;
 
   max-width: var(--max-content-width);
-  margin: 0 auto;
 
   &.isColumnsReversed {
     flex-direction: row-reverse;
