@@ -37,7 +37,7 @@
   left: 0;
   right: 0;
   height: var(--header-height);
-  max-width: 1600px;
+  max-width: var(--max-content-width);
   margin: 0 auto;
 }
 
