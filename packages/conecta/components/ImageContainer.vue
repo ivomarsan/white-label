@@ -19,7 +19,7 @@ const hasBorder = computed<boolean>(() => {
 });
 
 const hasBoxShadow = computed<boolean>(() => {
-  return boxShadow === 'off';
+  return boxShadow === 'on';
 });
 
 const hasBorderLeft = computed<boolean>(() => {
