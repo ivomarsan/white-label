@@ -1,9 +1,13 @@
+<script setup lang="ts">
+const accent = ref('#05005b');
+</script>
+
 <template>
   <AppButton
     background-color="#ccc"
     :class="$style.cta"
     enable-hover-effect
-    text-color="#05005b"
+    :text-color="accent"
   >
     <span>Entrar em Contato</span>
   </AppButton>
