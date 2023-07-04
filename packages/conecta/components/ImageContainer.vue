@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useTheme } from '@/composables';
 
 type Border = 'left' | 'right' | 'none';
 
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const { border = 'none', boxShadow = 'off', src, alt } = defineProps<Props>();
+
+const { themeColors } = useTheme();
 
 const hasBorder = computed<boolean>(() => {
   return border !== 'none';
@@ -68,7 +71,7 @@ function getImage(src: Props['src']) {
 
   &.hasBorder {
     overflow: hidden;
-    border-color: #05005b;
+    border-color: v-bind('themeColors.primary');
   }
 
   &.hasBorderLeft {

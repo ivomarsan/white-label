@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const accent = ref('#05005b');
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
 </script>
 
 <template>
@@ -7,7 +9,7 @@ const accent = ref('#05005b');
     background-color="#ccc"
     :class="$style.cta"
     enable-hover-effect
-    :text-color="accent"
+    :text-color="themeColors.primary"
   >
     <span>Entrar em Contato</span>
   </AppButton>
