@@ -53,10 +53,7 @@ const isColumnsReversed = computed<boolean>(() => {
           <div>
             <slot :name="isColumnsReversed ? 'last-column' : 'first-column'">
               <slot name="title">
-                <SectionTitle
-                  :class="$style.title"
-                  :title="title"
-                />
+                <SectionTitle :title="title" />
               </slot>
 
               <slot name="description">
