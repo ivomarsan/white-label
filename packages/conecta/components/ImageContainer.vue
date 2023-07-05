@@ -61,6 +61,20 @@ function getImage(src: Props['src']) {
 
   return new URL(`../assets/${src}`, import.meta.url).href;
 }
+
+function truncate(text?: string, limit: number = 100) {
+  if (!text) {
+    return '';
+  }
+
+  if (text.length <= limit) {
+    return text;
+  }
+
+  const truncatedText = text.substring(0, limit);
+
+  return `${truncatedText}...`;
+}
 </script>
 
 <template>
@@ -88,13 +102,13 @@ function getImage(src: Props['src']) {
         v-if="hasOverlayTitle"
         :class="$style.title"
       >
-        {{ overlayTitle }}
+        {{ truncate(overlayTitle, 50) }}
       </span>
       <span
         v-if="hasOverlayDescription"
         :class="$style.description"
       >
-        {{ overlayDescription }}
+        {{ truncate(overlayDescription, 160) }}
       </span>
     </div>
   </div>
