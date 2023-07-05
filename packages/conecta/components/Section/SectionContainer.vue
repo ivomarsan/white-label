@@ -72,6 +72,10 @@ const isColumnsReversed = computed<boolean>(() => {
                       <li :class="$style.descriptionItem">{{ text }}</li>
                     </template>
                   </ol>
+
+                  <p v-else>
+                    {{ description }}
+                  </p>
                 </div>
               </slot>
             </slot>
