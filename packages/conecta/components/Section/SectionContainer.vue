@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import SectionTitle from './SectionTitle.vue';
+import SectionTitle from '@/components/Section/SectionTitle.vue';
 import { useTheme } from '@/composables';
 
 type TitleAlign = 'left' | 'right';
@@ -39,8 +39,8 @@ const isColumnsReversed = computed<boolean>(() => {
 </script>
 
 <template>
-  <slot name="container">
-    <section :class="$style.container">
+  <section :class="$style.container">
+    <slot name="container">
       <div
         :class="[
           $style.inner,
@@ -84,8 +84,8 @@ const isColumnsReversed = computed<boolean>(() => {
           </div>
         </slot>
       </div>
-    </section>
-  </slot>
+    </slot>
+  </section>
 </template>
 
 <style module>
