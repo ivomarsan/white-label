@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { useTheme } from '@/composables';
+import Button from '@/components/Button.vue';
 
 const { themeColors } = useTheme();
 </script>
 
 <template>
-  <AppButton
+  <Button
     background-color="#ccc"
     :class="$style.cta"
     enable-hover-effect
     :text-color="themeColors.primary"
   >
     <span>Entrar em Contato</span>
-  </AppButton>
+  </Button>
 </template>
 
 <style module>
