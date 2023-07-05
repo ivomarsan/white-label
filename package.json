@@ -9,7 +9,8 @@
   "scripts": {
     "build": "yarn workspace @white-label/conecta build",
     "dev": "yarn workspace @white-label/conecta dev",
-    "start": "yarn workspace @white-label/conecta start"
+    "start": "yarn workspace @white-label/conecta start",
+    "generate": "yarn workspace @white-label/conecta generate"
   },
   "devDependencies": {
     "lerna": "7.1.1"
