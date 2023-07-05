@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AppFooter from '@/components/App/AppFooter.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <AppFooter />
+  <Footer />
 </template>
 
 <style module></style>
