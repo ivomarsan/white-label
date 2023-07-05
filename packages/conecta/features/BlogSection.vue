@@ -37,7 +37,22 @@ const posts = [
           title="Blog"
         />
 
-        <Carousel :items="posts" />
+        <Carousel
+          :class="$style.carousel"
+          :items="posts"
+        >
+          <template #default="{ title, description, mediaUrl }">
+            <div :class="$style.post">
+              <ImageContainer
+                box-shadow="on"
+                :class="$style.postImage"
+                :src="mediaUrl"
+              />
+              <h1>{{ title }}</h1>
+              <p>{{ description }}</p>
+            </div>
+          </template>
+        </Carousel>
       </div>
     </template>
   </SectionContainer>
@@ -54,5 +69,21 @@ const posts = [
 
 .title {
   @apply mb-16;
+}
+
+.carousel {
+  @apply gap-16;
+}
+
+.post {
+  @apply flex flex-col;
+
+  max-width: 350px;
+}
+
+.postImage {
+  max-width: 350px;
+  height: 350px;
+  width: 100%;
 }
 </style>

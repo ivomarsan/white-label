@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SectionContainer from '@/components/Section/SectionContainer.vue';
-import Carousel from '@/components/Carousel.vue';
+import Testimonials from '@/components/Testimonials.vue';
 
 const testimonials = [
   {
@@ -34,7 +34,7 @@ const testimonials = [
           title="O que dizem sobre a Conecta Treinamentos"
         />
 
-        <Carousel
+        <Testimonials
           blur-inactives
           expand-active
           :items="testimonials"

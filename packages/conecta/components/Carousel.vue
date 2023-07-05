@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import ImageContainer from '@/components/ImageContainer.vue';
 import ArrowRightSVG from '@/assets/svgs/arrow-right.svg';
 import ArrowLeftSVG from '@/assets/svgs/arrow-left.svg';
 import { useTheme } from '@/composables';
@@ -14,7 +13,7 @@ interface CarouselItem {
   mediaUrl?: string;
 }
 
-interface Props {
+export interface Props {
   items?: CarouselItem[];
   blurInactives?: boolean;
   expandActive?: boolean;
@@ -103,20 +102,14 @@ function onNextButtonClick() {
         v-for="(item, index) in items"
         :key="index"
       >
-        <ImageContainer
-          box-shadow="on"
-          :class="[
-            $style.item,
-            {
-              [$style.isBlurred]: areInactiveItemsBlured,
-              [$style.isExpanded]: isActiveItemExpanded,
-            },
-            [isActiveItem(index) ? $style.isActive : $style.isInactive],
-          ]"
-          :overlay-description="item.description"
-          :overlay-title="item.title"
-          src="images/feeling-safe.jpg"
-        />
+        <slot
+          v-bind="{
+            ...item,
+            isActive: isActiveItem(index),
+            areInactiveItemsBlured,
+            isActiveItemExpanded,
+          }"
+        ></slot>
       </template>
 
       <template v-if="areControlsVisible">
@@ -147,26 +140,6 @@ function onNextButtonClick() {
 
   &.isEmpty {
     @apply font-bold;
-  }
-}
-
-.item {
-  transition: all 100ms ease-in-out;
-
-  &.isInactive {
-    z-index: 0;
-
-    &.isBlurred {
-      filter: blur(3px);
-    }
-  }
-
-  &.isActive {
-    z-index: 1;
-
-    &.isExpanded {
-      transform: scale(1.15);
-    }
   }
 }
 
