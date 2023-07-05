@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SectionContainer from '@/components/SectionContainer.vue';
+import SectionContainer from '@/components/Section/SectionContainer.vue';
 import ImageContainer from '@/components/ImageContainer.vue';
 </script>
 
