@@ -11,9 +11,18 @@ interface Props {
   boxShadow?: BoxShadow;
   src?: string;
   alt?: string;
+  overlayTitle?: string;
+  overlayDescription?: string;
 }
 
-const { border = 'none', boxShadow = 'off', src, alt } = defineProps<Props>();
+const {
+  border = 'none',
+  boxShadow = 'off',
+  src,
+  alt,
+  overlayTitle,
+  overlayDescription,
+} = defineProps<Props>();
 
 const { themeColors } = useTheme();
 
@@ -31,6 +40,18 @@ const hasBorderLeft = computed<boolean>(() => {
 
 const hasBorderRight = computed<boolean>(() => {
   return !!hasBorder.value && border === 'right';
+});
+
+const hasOverlayTitle = computed<boolean>(() => {
+  return !!overlayTitle;
+});
+
+const hasOverlayDescription = computed<boolean>(() => {
+  return !!overlayDescription;
+});
+
+const isOverlayVisible = computed<boolean>(() => {
+  return !!hasOverlayTitle.value || !!hasOverlayDescription.value;
 });
 
 function getImage(src: Props['src']) {
@@ -58,6 +79,24 @@ function getImage(src: Props['src']) {
       :alt="alt"
       :src="getImage(src)"
     />
+
+    <div
+      v-if="isOverlayVisible"
+      :class="$style.overlay"
+    >
+      <span
+        v-if="hasOverlayTitle"
+        :class="$style.title"
+      >
+        {{ overlayTitle }}
+      </span>
+      <span
+        v-if="hasOverlayDescription"
+        :class="$style.description"
+      >
+        {{ overlayDescription }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -65,6 +104,7 @@ function getImage(src: Props['src']) {
 .container {
   @apply flex;
 
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
 
@@ -85,5 +125,25 @@ function getImage(src: Props['src']) {
     border-radius: 16px 16px 15vw 16px;
     border-right-width: 1vw;
   }
+}
+
+.overlay {
+  @apply flex flex-col items-center justify-center;
+  @apply gap-4 p-4;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: flex;
+}
+
+.title {
+  color: #ffffff;
+}
+
+.description {
+  color: #ffffff;
 }
 </style>
