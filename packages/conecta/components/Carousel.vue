@@ -24,7 +24,7 @@ interface Props {
 const {
   items,
   blurInactives = false,
-  expandActive = true,
+  expandActive = false,
   showControls = false,
 } = defineProps<Props>();
 

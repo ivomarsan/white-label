@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import BlogSection from '@/features/BlogSection.vue';
 import FooterSection from '@/features/FooterSection.vue';
 import HeaderSection from '@/features/HeaderSection.vue';
 import MissionSection from '@/features/MissionSection.vue';
 import PurposeSection from '@/features/PurposeSection.vue';
+import ServicesSection from '@/features/ServicesSection.vue';
 import TestimonialsSection from '@/features/TestimonialsSection.vue';
 </script>
 
@@ -17,6 +19,8 @@ import TestimonialsSection from '@/features/TestimonialsSection.vue';
     <ServicesSection />
 
     <TestimonialsSection />
+
+    <BlogSection />
 
     <FooterSection />
   </main>

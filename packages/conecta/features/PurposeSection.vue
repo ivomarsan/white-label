@@ -5,6 +5,7 @@ import ImageContainer from '@/components/ImageContainer.vue';
 
 <template>
   <SectionContainer
+    background-color="#afbedb"
     :description="[
       'Disseminar conhecimento que garanta e assegure a integridade das pessoas, patrimônio e meio-ambiente',
       'Facilitar o acesso aos melhores treinamentos de prevenção e proteção da vida a fim de despertar o máximo interesse das empresas e pessoap pelo bem-estar coletivo e individual',

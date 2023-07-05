@@ -21,29 +21,24 @@ const testimonials = [
 
 <template>
   <SectionContainer
-    background-color="#05005B"
-    :class="$style.testimonialsSection"
+    background-color="#afbedb"
+    :class="$style.blogSection"
   >
     <template #inner>
       <div :class="$style.inner">
         <SectionTitle
           :class="$style.title"
-          title="O que dizem sobre a Conecta Treinamentos"
+          title="Blog"
         />
 
-        <Carousel
-          blur-inactives
-          expand-active
-          :items="testimonials"
-          show-controls
-        />
+        <Carousel :items="testimonials" />
       </div>
     </template>
   </SectionContainer>
 </template>
 
 <style module>
-.testimonialsSection {
+.blogSection {
   @apply pb-56 pt-40;
 }
 
@@ -53,7 +48,5 @@ const testimonials = [
 
 .title {
   @apply mb-16;
-
-  color: #f8eb88;
 }
 </style>

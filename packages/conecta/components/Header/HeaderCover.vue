@@ -63,10 +63,12 @@ const isWaveEffectEnable = computed<boolean>(() => {
   justify-content: space-between;
   align-items: center;
 
-  background-image: url('@/assets/images/background-header-cover.webp');
+  /* background-image: url('@/assets/images/background-header-cover.webp');
   background-position: 50%;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+
+  background-color: #05005b;
 
   &.isFullscreen {
     min-height: 100vh;

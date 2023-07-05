@@ -28,6 +28,7 @@ const isFixed = computed<boolean>(() => {
     </header>
 
     <HeaderCover
+      background-wave-color="#afbedb"
       :class="$style.cover"
       wave="on"
     >
