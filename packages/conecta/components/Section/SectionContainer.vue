@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import SectionTitle from './SectionTitle.vue';
 import { useTheme } from '@/composables';
 
 type TitleAlign = 'left' | 'right';
@@ -19,10 +20,6 @@ const {
 } = defineProps<Props>();
 
 const { themeColors } = useTheme();
-
-const hasTitle = computed<boolean>(() => {
-  return !!title;
-});
 
 const isDescriptionList = computed<boolean>(() => {
   return !!Array.isArray(description);
@@ -56,12 +53,10 @@ const isColumnsReversed = computed<boolean>(() => {
           <div>
             <slot :name="isColumnsReversed ? 'last-column' : 'first-column'">
               <slot name="title">
-                <h1
-                  v-if="hasTitle"
+                <SectionTitle
                   :class="$style.title"
-                >
-                  <span>{{ title }}</span>
-                </h1>
+                  :title="title"
+                />
               </slot>
 
               <slot name="description">
@@ -113,12 +108,6 @@ const isColumnsReversed = computed<boolean>(() => {
   &.isColumnsReversed {
     flex-direction: row-reverse;
   }
-}
-
-.title {
-  @apply text-3xl font-bold;
-
-  color: v-bind('themeColors.primary');
 }
 
 .description {
