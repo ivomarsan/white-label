@@ -65,12 +65,14 @@ function getImage(src: Props['src']) {
 .container {
   @apply flex;
 
+  border-radius: 16px;
+  overflow: hidden;
+
   &.hasBoxShadow {
     box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.23);
   }
 
   &.hasBorder {
-    overflow: hidden;
     border-color: v-bind('themeColors.primary');
   }
 
