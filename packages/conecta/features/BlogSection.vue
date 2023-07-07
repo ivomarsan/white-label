@@ -32,7 +32,7 @@ const posts = [
 
 <template>
   <SectionContainer
-    background-color="#afbedb"
+    :background-color="themeColors.base"
     :class="$style.blogSection"
   >
     <template #inner>

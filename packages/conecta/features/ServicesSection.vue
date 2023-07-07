@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import SectionContainer from '@/components/Section/SectionContainer.vue';
 import ImageContainer from '@/components/ImageContainer.vue';
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
 </script>
 
 <template>
   <SectionContainer
-    background-color="#afbedb"
+    :background-color="themeColors.base"
     :class="$style.blogSection"
   >
     <template #inner>

@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import SectionContainer from '@/components/Section/SectionContainer.vue';
 import ImageContainer from '@/components/ImageContainer.vue';
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
 </script>
 
 <template>
   <SectionContainer
-    background-color="#afbedb"
+    :background-color="themeColors.base"
     :description="[
       'Disseminar conhecimento que garanta e assegure a integridade das pessoas, patrimônio e meio-ambiente',
       'Facilitar o acesso aos melhores treinamentos de prevenção e proteção da vida a fim de despertar o máximo interesse das empresas e pessoap pelo bem-estar coletivo e individual',

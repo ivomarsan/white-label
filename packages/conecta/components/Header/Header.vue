@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
+
 interface Props {
   fixed?: boolean;
 }
@@ -28,7 +32,7 @@ const isFixed = computed<boolean>(() => {
     </header>
 
     <HeaderCover
-      background-wave-color="#afbedb"
+      :background-wave-color="themeColors.base"
       :class="$style.cover"
       wave="on"
     >
