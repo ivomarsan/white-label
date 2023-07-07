@@ -90,14 +90,14 @@ const isFixed = computed<boolean>(() => {
 .title {
   @apply text-5xl font-bold;
 
-  color: #ffffff;
+  color: v-bind('themeColors.secondary');
 }
 
 .subtitle {
   @apply text-center text-xl font-light;
   @apply mt-8;
 
-  color: #ffffff;
+  color: v-bind('themeColors.secondary');
 }
 
 .menu {
