@@ -4,6 +4,7 @@ import SectionContainer from '@/components/Section/SectionContainer.vue';
 import ImageContainer from '@/components/ImageContainer.vue';
 import { useTheme } from '@/composables';
 import { truncate } from '@/shared';
+import Button from '@/components/Button.vue';
 
 const { themeColors } = useTheme();
 
@@ -60,6 +61,17 @@ const posts = [
             </div>
           </template>
         </Carousel>
+
+        <div :class="$style.buttonWrapper">
+          <Button
+            :background-color="themeColors.primary"
+            :class="$style.button"
+            enable-hover-effect
+            :text-color="themeColors.secondary"
+          >
+            <span>Acesse o blog</span>
+          </Button>
+        </div>
       </div>
     </template>
   </SectionContainer>
@@ -104,5 +116,10 @@ const posts = [
 .postDescription {
   @apply text-xl;
   @apply m-2;
+}
+
+.buttonWrapper {
+  @apply flex w-full justify-end;
+  @apply mt-16;
 }
 </style>
