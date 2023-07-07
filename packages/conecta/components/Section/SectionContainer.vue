@@ -112,7 +112,7 @@ const isColumnsReversed = computed<boolean>(() => {
 }
 
 .description {
-  @apply mt-8;
+  @apply mt-8 text-xl;
 }
 
 .descriptionList {

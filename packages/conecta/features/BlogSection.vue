@@ -95,13 +95,14 @@ const posts = [
 }
 
 .postTitle {
-  @apply font-bold;
+  @apply text-xl font-bold;
   @apply mx-2 my-4;
 
   color: v-bind('themeColors.primary');
 }
 
 .postDescription {
+  @apply text-xl;
   @apply m-2;
 }
 </style>
