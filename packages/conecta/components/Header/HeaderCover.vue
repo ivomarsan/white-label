@@ -68,8 +68,6 @@ const isWaveEffectEnable = computed<boolean>(() => {
   background-size: cover;
   background-repeat: no-repeat; */
 
-  background-color: #05005b;
-
   &.isFullscreen {
     min-height: 100vh;
   }

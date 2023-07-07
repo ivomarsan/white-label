@@ -5,51 +5,60 @@ const { themeColors } = useTheme();
 
 interface Props {
   fixed?: boolean;
+  hideCover?: boolean;
 }
 
-const { fixed } = defineProps<Props>();
+const { fixed, hideCover } = defineProps<Props>();
 
 const isFixed = computed<boolean>(() => {
   return !!fixed;
 });
+
+const isCoverVisible = computed<boolean>(() => {
+  return !hideCover;
+});
 </script>
 
 <template>
-  <section
-    :class="[
-      $style.container,
-      {
-        [$style.isFixed]: isFixed,
-      },
-    ]"
-  >
-    <header :class="$style.header">
-      <HeaderLogo />
+  <section :class="$style.container">
+    <header
+      :class="[
+        $style.header,
+        {
+          [$style.isFixed]: isFixed,
+        },
+      ]"
+    >
+      <div :class="$style.inner">
+        <HeaderLogo />
 
-      <HeaderMenu :class="$style.menu" />
+        <HeaderMenu :class="$style.menu" />
 
-      <HeaderCTA />
+        <HeaderCTA />
+      </div>
     </header>
 
-    <HeaderCover
-      :background-wave-color="themeColors.base"
-      :class="$style.cover"
-      wave="on"
-    >
-      <div :class="$style.content">
-        <h1 :class="$style.title">
-          <span>Treinamentos para vida</span>
-        </h1>
+    <template v-if="isCoverVisible">
+      <HeaderCover
+        :background-wave-color="themeColors.base"
+        :class="$style.cover"
+        wave="on"
+      >
+        <div :class="$style.content">
+          <h1 :class="$style.title">
+            <span>Treinamentos para vida</span>
+          </h1>
 
-        <h2 :class="$style.subtitle">
-          <span
-            >Somos uma empresa gestora de treinamentos para a vida. Para isso,
-            nós conectamos quem precisa de treinamentos com os maiores
-            especialistas em segurança de todo o Brasil.</span
-          >
-        </h2>
-      </div>
-    </HeaderCover>
+          <h2 :class="$style.subtitle">
+            <span
+              >Somos uma empresa gestora de treinamentos para a vida. Para isso,
+              nós conectamos quem precisa de treinamentos com os maiores
+              especialistas em segurança de todo o Brasil.</span
+            >
+          </h2>
+        </div>
+      </HeaderCover>
+    </template>
   </section>
 </template>
 
@@ -59,26 +68,36 @@ const isFixed = computed<boolean>(() => {
 }
 
 .container {
-  @apply flex flex-col;
+  @apply flex flex-col items-center;
+
+  background-color: v-bind('themeColors.primary');
 }
 
 .header {
-  @apply flex items-center justify-between;
+  @apply flex w-full;
+
+  height: var(--header-height);
+  background-color: v-bind('themeColors.primary');
 
   position: absolute;
-  left: 0;
-  right: 0;
-  height: var(--header-height);
-  max-width: var(--max-content-width);
-  margin: 0 auto;
+  z-index: 9;
 
   &.isFixed {
     position: fixed;
   }
 }
 
+.inner {
+  @apply flex  flex-grow items-center justify-between;
+
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
 .cover {
-  padding-top: var(--header-height);
+  @apply w-full;
+
+  margin-top: var(--header-height);
 }
 
 .content {
