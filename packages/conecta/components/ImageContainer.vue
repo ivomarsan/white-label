@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useTheme } from '@/composables';
+import { truncate } from '@/shared';
 
 type Border = 'left' | 'right' | 'none';
 
@@ -60,20 +61,6 @@ function getImage(src: Props['src']) {
   }
 
   return new URL(`../assets/${src}`, import.meta.url).href;
-}
-
-function truncate(text?: string, limit: number = 100) {
-  if (!text) {
-    return '';
-  }
-
-  if (text.length <= limit) {
-    return text;
-  }
-
-  const truncatedText = text.substring(0, limit);
-
-  return `${truncatedText}...`;
 }
 </script>
 
