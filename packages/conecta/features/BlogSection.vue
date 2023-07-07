@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Carousel from '@/components/Carousel.vue';
 import SectionContainer from '@/components/Section/SectionContainer.vue';
+import ImageContainer from '@/components/ImageContainer.vue';
 import { useTheme } from '@/composables';
 import { truncate } from '@/shared';
 
