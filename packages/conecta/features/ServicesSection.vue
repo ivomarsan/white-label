@@ -1,14 +1,33 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
 import SectionContainer from '@/components/Section/SectionContainer.vue';
-import ImageContainer from '@/components/ImageContainer.vue';
+
 import { useTheme } from '@/composables';
 
 const { themeColors } = useTheme();
+
+const services = [
+  { icon: 'safe-helmet', description: 'CIPA' },
+  { icon: 'doctors-bag', description: 'Primeiros socorros' },
+  {
+    icon: 'electricity-hazard',
+    description: 'Segurança em instalações e serviços em eletricidade',
+  },
+  { icon: 'fire-extinguisher', description: 'Proteção e combate a incêndio' },
+  { icon: 'claustrophobia', description: 'Trabalho em espaços confinados' },
+  { icon: 'folding-ladder', description: 'Trabalho em altura' },
+];
+
+function getIcon(iconName: string) {
+  return defineAsyncComponent(
+    () => import(`@/assets/svgs/${iconName}.svg?component`),
+  );
+}
 </script>
 
 <template>
   <SectionContainer
-    :background-color="themeColors.base"
+    background-color="#afbedb"
     :class="$style.blogSection"
   >
     <template #inner>
@@ -18,7 +37,22 @@ const { themeColors } = useTheme();
           title="Nossos serviços"
         />
 
-        <ImageContainer src="images/services.png" />
+        <div :class="$style.list">
+          <template
+            v-for="(service, index) in services"
+            :key="index"
+          >
+            <div :class="$style.item">
+              <div :class="$style.badge">
+                <component :is="getIcon(service.icon)" />
+              </div>
+
+              <div :class="$style.description">
+                <span>{{ service.description }}</span>
+              </div>
+            </div>
+          </template>
+        </div>
       </div>
     </template>
   </SectionContainer>
@@ -31,5 +65,35 @@ const { themeColors } = useTheme();
 
 .title {
   @apply mb-16;
+}
+
+.list {
+  @apply flex flex-wrap justify-center;
+  @apply gap-32 px-32 py-16;
+}
+
+.item {
+  @apply flex flex-col items-center;
+
+  width: 20rem;
+}
+
+.badge {
+  @apply p-6;
+
+  width: 8rem;
+  background-color: v-bind('themeColors.primary');
+  border-radius: 50%;
+
+  & svg {
+    fill: v-bind('themeColors.secondary');
+  }
+}
+
+.description {
+  @apply text-center text-2xl;
+  @apply mt-2;
+
+  color: v-bind('themeColors.primary');
 }
 </style>
