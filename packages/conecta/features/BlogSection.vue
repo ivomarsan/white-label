@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import SectionContainer from '@/components/Section/SectionContainer.vue';
 import Carousel from '@/components/Carousel.vue';
+import SectionContainer from '@/components/Section/SectionContainer.vue';
+import { useTheme } from '@/composables';
+import { truncate } from '@/shared';
+
+const { themeColors } = useTheme();
 
 const posts = [
   {
@@ -48,8 +52,10 @@ const posts = [
                 :class="$style.postImage"
                 :src="mediaUrl"
               />
-              <h1>{{ title }}</h1>
-              <p>{{ description }}</p>
+              <h1 :class="$style.postTitle">{{ title }}</h1>
+              <p :class="$style.postDescription">{{
+                truncate(description, 110)
+              }}</p>
             </div>
           </template>
         </Carousel>
@@ -85,5 +91,16 @@ const posts = [
   max-width: 350px;
   height: 350px;
   width: 100%;
+}
+
+.postTitle {
+  @apply font-bold;
+  @apply mx-2 my-4;
+
+  color: v-bind('themeColors.primary');
+}
+
+.postDescription {
+  @apply m-2;
 }
 </style>
