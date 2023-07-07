@@ -60,7 +60,7 @@ function getImage(src: Props['src']) {
     return '';
   }
 
-  return new URL(`../assets/${src}`, import.meta.url).href;
+  return new URL(`../src/${src}`, import.meta.url).href;
 }
 </script>
 
