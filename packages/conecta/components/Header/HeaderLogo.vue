@@ -13,7 +13,7 @@ const { themeColors } = useTheme();
 
 <style module>
 .logo {
-  @apply flex h-full;
+  @apply flex h-full w-full;
   @apply m-2;
 
   max-width: 15rem;
