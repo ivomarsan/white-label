@@ -1,5 +1,80 @@
+<script setup lang="ts">
+import FacebookLogoSVG from '@/assets/svgs/facebook-logo.svg';
+import InstagramLogoSVG from '@/assets/svgs/instagram-logo.svg';
+import LinkedInLogoSVG from '@/assets/svgs/linkedin-logo.svg';
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
+</script>
+
 <template>
-  <footer>
-    <h1>Footer</h1>
+  <footer :class="$style.footer">
+    <div :class="$style.logo">
+      <img src="@/src/images/logo.png" />
+    </div>
+
+    <div :class="$style.socialMedia">
+      <a
+        href="https://www.linkedin.com/company/conecta-treine"
+        target="_blank"
+      >
+        <LinkedInLogoSVG />
+      </a>
+
+      <a
+        href="https://facebook.com/conectatreine"
+        target="_blank"
+      >
+        <FacebookLogoSVG />
+      </a>
+
+      <a
+        href="https://www.instagram.com/conectatreine"
+        target="_blank"
+      >
+        <InstagramLogoSVG />
+      </a>
+    </div>
+
+    <div :class="$style.bottomLine">
+      <span
+        >Direitos Reservados ©️ | Conecta – CNPJ: 00.000.000/0001-00 | Av.
+        Sagitário, 1234 – 5 Andar, Curitiba</span
+      >
+    </div>
   </footer>
 </template>
+
+<style module>
+.footer {
+  @apply flex flex-col items-center;
+  @apply p-8;
+}
+
+.logo {
+  height: 60px;
+
+  & img {
+    height: 100%;
+  }
+}
+
+.socialMedia {
+  @apply flex;
+  @apply gap-4 py-8;
+
+  & svg {
+    fill: #777;
+    transition: fill 100ms ease-in-out;
+    width: 40px;
+
+    &:hover {
+      fill: v-bind('themeColors.secondary');
+    }
+  }
+}
+
+.bottomLine {
+  color: v-bind('themeColors.secondary');
+}
+</style>
