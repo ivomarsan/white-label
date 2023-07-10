@@ -18,6 +18,7 @@ export interface Props {
   blurInactives?: boolean;
   expandActive?: boolean;
   showControls?: boolean;
+  autoplay?: boolean;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   blurInactives = false,
   expandActive = false,
   showControls = false,
+  autoplay = false,
 } = defineProps<Props>();
 
 const { themeColors } = useTheme();
@@ -82,6 +84,14 @@ function setNextItem() {
     currentCaroulselItemIndex.value++;
   }
 }
+
+onMounted(() => {
+  if (autoplay) {
+    setInterval(() => {
+      setNextItem();
+    }, 5000);
+  }
+});
 
 function onPrevButtonClick() {
   setPreviousItem();
