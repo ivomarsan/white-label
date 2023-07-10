@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BlogSection from '@/features/BlogSection.vue';
-// import FooterSection from '@/features/FooterSection.vue';
+import FooterSection from '@/features/FooterSection.vue';
 import Header from '@/components/Header/Header.vue';
 </script>
 
@@ -10,7 +10,7 @@ import Header from '@/components/Header/Header.vue';
 
     <BlogSection />
 
-    <!-- <FooterSection /> -->
+    <FooterSection />
   </main>
 </template>
 
