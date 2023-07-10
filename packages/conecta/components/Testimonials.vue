@@ -48,9 +48,8 @@ const { items } = defineProps<Props>();
 
 <style module>
 .image {
-  max-width: 350px;
-  height: 350px;
   width: 100%;
+  aspect-ratio: 1 / 1;
 
   &.isInactive {
     z-index: 0;
