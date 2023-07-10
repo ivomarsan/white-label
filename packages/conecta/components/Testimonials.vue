@@ -19,7 +19,7 @@ const { items } = defineProps<Props>();
     show-controls
   >
     <template
-      #default="{
+      #item="{
         isActive,
         title,
         description,

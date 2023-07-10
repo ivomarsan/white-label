@@ -51,7 +51,7 @@ const posts = [
           :class="$style.carousel"
           :items="posts"
         >
-          <template #default="{ title, description, mediaUrl, url }">
+          <template #item="{ title, description, mediaUrl, url }">
             <NuxtLink
               :class="$style.post"
               :to="url"

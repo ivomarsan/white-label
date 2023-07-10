@@ -133,7 +133,7 @@ function onNextButtonClick() {
 </script>
 
 <template>
-  <div
+  <div v-bind="$attrs"
     :class="[
       $style.carousel,
       {
@@ -150,11 +150,9 @@ function onNextButtonClick() {
         v-for="(item, index) in items"
         :key="index"
       >
-        <div :class="$style.items">
-          <slot
-            v-bind="generateSlotBinds(item, index)"
-          ></slot>
-        </div>
+        <slot name="item"
+          v-bind="generateSlotBinds(item, index)"
+        ></slot>
       </template>
 
       <template v-if="areControlsVisible">
@@ -194,9 +192,6 @@ function onNextButtonClick() {
   }
 }
 
-.items {
-  width: 100%;
-}
 
 .controlButton {
   @apply flex items-center justify-center;
