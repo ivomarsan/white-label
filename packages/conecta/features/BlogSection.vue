@@ -36,6 +36,7 @@ const posts = [
 
 <template>
   <SectionContainer
+    id="blog"
     :background-color="themeColors.base"
     :class="$style.blogSection"
   >

@@ -27,6 +27,7 @@ function getIcon(iconName: string) {
 
 <template>
   <SectionContainer
+    id="cursos"
     background-color="#afbedb"
     :class="$style.blogSection"
   >

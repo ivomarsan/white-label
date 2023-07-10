@@ -11,6 +11,7 @@ const description =
 
 <template>
   <SectionContainer
+    id="quem-somos"
     :background-color="themeColors.base"
     :description="description"
     title="Quem somos"
