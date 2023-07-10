@@ -48,7 +48,6 @@ const { items } = defineProps<Props>();
 
 <style module>
 .image {
-  transition: all 100ms ease-in-out;
   max-width: 350px;
   height: 350px;
   width: 100%;
@@ -58,6 +57,7 @@ const { items } = defineProps<Props>();
 
     &.isBlurred {
       filter: blur(3px);
+      transition: filter 200ms linear;
     }
   }
 
@@ -66,6 +66,7 @@ const { items } = defineProps<Props>();
 
     &.isExpanded {
       transform: scale(1.15);
+      transition: transform 300ms ease-in-out;
     }
   }
 }
