@@ -3,8 +3,15 @@ import { computed, ref } from 'vue';
 import ArrowRightSVG from '@/assets/svgs/arrow-right.svg';
 import ArrowLeftSVG from '@/assets/svgs/arrow-left.svg';
 import { useTheme } from '@/composables';
+import type {ComputedRef} from 'vue'
 
 type MediaType = 'image' | 'video';
+
+type SlotBinds<T> = {
+  isActive?: boolean
+  areInactiveItemsBlured?: ComputedRef<boolean>
+  isActiveItemExpanded?: ComputedRef<boolean>
+} & Partial<T>
 
 interface CarouselItem {
   title: string;
@@ -91,6 +98,23 @@ function setNextItem() {
   }
 }
 
+function generateSlotBinds(item?: CarouselItem, index?: number): SlotBinds<CarouselItem> {
+  if(item && index || index === 0) {
+    return {
+      ...item,
+      isActive: isActiveItem(index),
+      areInactiveItemsBlured,
+      isActiveItemExpanded,
+    }  
+  } else if (items?.length) {
+    return {
+      ...items[currentCaroulselItemIndex.value],
+    }
+  } else {
+    return {}
+  }
+}
+
 onMounted(() => {
   if (autoplay) {
     setInterval(() => {
@@ -128,12 +152,7 @@ function onNextButtonClick() {
       >
         <div :class="$style.items">
           <slot
-            v-bind="{
-              ...item,
-              isActive: isActiveItem(index),
-              areInactiveItemsBlured,
-              isActiveItemExpanded,
-            }"
+            v-bind="generateSlotBinds(item, index)"
           ></slot>
         </div>
       </template>
@@ -157,7 +176,9 @@ function onNextButtonClick() {
   </div>
 
   <div :class="$style.bottom" v-if="isBottomSlotVisible">
-    <slot name="bottom"></slot>
+    <slot name="bottom"
+      v-bind="generateSlotBinds()"
+    ></slot>
   </div>
 </template>
 
