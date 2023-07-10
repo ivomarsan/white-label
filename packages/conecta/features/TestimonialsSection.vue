@@ -47,7 +47,7 @@ const testimonials = [
 
 <style module>
 .testimonialsSection {
-  @apply pb-28 pt-12;
+  @apply py-12;
 }
 
 .inner {
