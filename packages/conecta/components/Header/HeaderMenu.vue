@@ -1,10 +1,26 @@
 <template>
   <nav :class="$style.container">
     <ul :class="$style.menu">
-      <li>Quem Somos</li>
-      <li>Parcerias</li>
-      <li>Cursos</li>
-      <li>Blog</li>
+      <li>
+        <NuxtLink :to="{ path: '/', hash: '#quem-somos' }">
+          <span>Quem Somos</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink :to="{ path: '/', hash: '#parcerias' }">
+          <span>Parcerias</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink :to="{ path: '/', hash: '#cursos' }">
+          <span>Cursos</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink :to="{ path: '/', hash: '#blog' }">
+          <span>Blog</span>
+        </NuxtLink>
+      </li>
     </ul>
   </nav>
 </template>
