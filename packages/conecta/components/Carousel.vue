@@ -11,6 +11,7 @@ interface CarouselItem {
   description?: string;
   mediaType?: MediaType;
   mediaUrl?: string;
+  url?: string;
 }
 
 export interface Props {

@@ -15,18 +15,21 @@ const posts = [
     description:
       'No mês de setembro, o dia do cliente é comemorado no dia 15 e é com muito orgulho que celebramos essa data com um dos',
     mediaUrl: 'images/blog/post-1.jpg',
+    url: '/blog/post-1',
   },
   {
     title: '5 dicas de como manter o seu colaborador motivado',
     description:
       '1. Deixe claro para o colaborador qual o papel dele no propósito da empresa!  Um dos primeiros passos para incentivar funcionários é fazer com que',
     mediaUrl: 'images/blog/post-2.jpg',
+    url: '/blog/post-2',
   },
   {
     title: 'Como utilizar as luzes de natal com segurança',
     description:
       'Na época do natal nossas casas ganham vida a mais, a empolgação das crianças ao escrever cartinhas, fazer pão de mel em família e decorar',
     mediaUrl: 'images/blog/post-3.jpg',
+    url: '/blog/post-3',
   },
 ];
 </script>
@@ -47,8 +50,11 @@ const posts = [
           :class="$style.carousel"
           :items="posts"
         >
-          <template #default="{ title, description, mediaUrl }">
-            <div :class="$style.post">
+          <template #default="{ title, description, mediaUrl, url }">
+            <NuxtLink
+              :class="$style.post"
+              :to="url"
+            >
               <ImageContainer
                 box-shadow="on"
                 :class="$style.postImage"
@@ -58,7 +64,7 @@ const posts = [
               <p :class="$style.postDescription">{{
                 truncate(description, 110)
               }}</p>
-            </div>
+            </NuxtLink>
           </template>
         </Carousel>
 
