@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import FooterSection from '@/features/FooterSection.vue';
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Treinamentos para vida` : 'Conecta';
@@ -7,7 +9,9 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <main>
     <slot />
-  </div>
+  </main>
+
+  <FooterSection />
 </template>
