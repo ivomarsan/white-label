@@ -31,6 +31,7 @@ const {
 } = defineProps<Props>();
 
 const { themeColors } = useTheme();
+const slots = useSlots()
 
 const currentCaroulselItemIndex = ref<number>(0);
 
@@ -52,6 +53,10 @@ const isActiveItemExpanded = computed<boolean>(() => {
 
 const areControlsVisible = computed<boolean>(() => {
   return !!showControls;
+});
+
+const isBottomSlotVisible = computed<boolean>(() => {
+  return !!slots['bottom'];
 });
 
 function isActiveItem(index: number) {
@@ -121,14 +126,16 @@ function onNextButtonClick() {
         v-for="(item, index) in items"
         :key="index"
       >
-        <slot
-          v-bind="{
-            ...item,
-            isActive: isActiveItem(index),
-            areInactiveItemsBlured,
-            isActiveItemExpanded,
-          }"
-        ></slot>
+        <div :class="$style.items">
+          <slot
+            v-bind="{
+              ...item,
+              isActive: isActiveItem(index),
+              areInactiveItemsBlured,
+              isActiveItemExpanded,
+            }"
+          ></slot>
+        </div>
       </template>
 
       <template v-if="areControlsVisible">
@@ -148,6 +155,10 @@ function onNextButtonClick() {
       </template>
     </template>
   </div>
+
+  <div :class="$style.bottom" v-if="isBottomSlotVisible">
+    <slot name="bottom"></slot>
+  </div>
 </template>
 
 <style module>
@@ -160,6 +171,10 @@ function onNextButtonClick() {
   &.isEmpty {
     @apply font-bold;
   }
+}
+
+.items {
+  width: 100%;
 }
 
 .controlButton {
@@ -186,5 +201,9 @@ function onNextButtonClick() {
   &.right {
     right: 0;
   }
+}
+
+.bottom {
+  @apply mt-4;
 }
 </style>
