@@ -71,12 +71,44 @@ function getIcon(iconName: string) {
 .list {
   @apply flex flex-wrap justify-center;
   @apply gap-32 px-32 py-16;
+
+  @media only screen and (max-width: 1200px) {
+    @apply gap-12 p-4;
+  }
+
+  @media only screen and (max-width: 800px) {
+    @apply p-0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    @apply gap-8;
+  }
+
+  @media only screen and (max-width: 500px) {
+    @apply gap-4;
+  }
 }
 
 .item {
   @apply flex flex-col items-center;
 
   width: 20rem;
+
+  @media only screen and (max-width: 1200px) {
+    width: 16rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 12rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 10rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 8rem;
+  }
 }
 
 .badge {
@@ -89,6 +121,16 @@ function getIcon(iconName: string) {
   & svg {
     fill: v-bind('themeColors.secondary');
   }
+
+  @media only screen and (max-width: 600px) {
+    @apply p-4;
+
+    width: 6rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 5rem;
+  }
 }
 
 .description {
@@ -96,5 +138,9 @@ function getIcon(iconName: string) {
   @apply mt-2;
 
   color: v-bind('themeColors.primary');
+
+  @media only screen and (max-width: 1200px) {
+    @apply text-center text-xl;
+  }
 }
 </style>
