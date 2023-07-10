@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import type { RouteLocation } from 'vue-router';
+import type { ConcreteComponent } from 'vue';
 
 interface Props {
   backgroundColor?: string;
   textColor?: string;
   outline?: boolean;
   enableHoverEffect?: boolean;
+  tag?: string;
+  to?: Partial<RouteLocation> | string;
 }
 
 const {
@@ -13,7 +17,17 @@ const {
   textColor = '#cccccc',
   outline = false,
   enableHoverEffect = false,
+  tag,
+  to,
 } = defineProps<Props>();
+
+const componentName = computed<ConcreteComponent | string>(() => {
+  if (!!to && Object.keys(to).length) {
+    return resolveComponent('NuxtLink');
+  }
+
+  return resolveComponent(tag || 'button');
+});
 
 const isOutline = computed<boolean>(() => {
   return !!outline;
@@ -26,7 +40,8 @@ const isHoverEffectEnabled = computed<boolean>(() => {
 
 <template>
   <div :class="$style.container">
-    <button
+    <component
+      :is="componentName"
       :class="[
         $style.button,
         {
@@ -34,10 +49,12 @@ const isHoverEffectEnabled = computed<boolean>(() => {
           [$style.isHoverEffectEnabled]: isHoverEffectEnabled,
         },
       ]"
+      v-bind="$attrs"
+      :to="to"
       type="button"
     >
       <slot />
-    </button>
+    </component>
   </div>
 </template>
 
