@@ -6,9 +6,12 @@ const { themeColors } = useTheme();
 </script>
 
 <template>
-  <div :class="$style.logo">
+  <NuxtLink
+    :class="$style.logo"
+    to="/"
+  >
     <LogoSVG />
-  </div>
+  </NuxtLink>
 </template>
 
 <style module>

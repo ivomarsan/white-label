@@ -68,6 +68,7 @@ const posts = [
             :class="$style.button"
             enable-hover-effect
             :text-color="themeColors.secondary"
+            to="/blog"
           >
             <span>Acesse o blog</span>
           </Button>
