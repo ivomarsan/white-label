@@ -55,7 +55,7 @@ function isActiveItem(index: number) {
   return index === currentCaroulselItemIndex.value;
 }
 
-function onPrevButtonClick() {
+function setPreviousItem() {
   if (!items?.length) {
     return;
   }
@@ -69,7 +69,7 @@ function onPrevButtonClick() {
   }
 }
 
-function onNextButtonClick() {
+function setNextItem() {
   if (!items?.length) {
     return;
   }
@@ -81,6 +81,14 @@ function onNextButtonClick() {
   } else {
     currentCaroulselItemIndex.value++;
   }
+}
+
+function onPrevButtonClick() {
+  setPreviousItem();
+}
+
+function onNextButtonClick() {
+  setNextItem();
 }
 </script>
 
