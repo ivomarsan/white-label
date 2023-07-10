@@ -87,7 +87,7 @@ const posts = [
 
 <style module>
 .blogSection {
-  @apply pb-56 pt-40;
+  @apply py-12;
 }
 
 .inner {

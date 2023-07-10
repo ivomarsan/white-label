@@ -47,7 +47,7 @@ const testimonials = [
 
 <style module>
 .testimonialsSection {
-  @apply pb-56 pt-40;
+  @apply pb-28 pt-12;
 }
 
 .inner {

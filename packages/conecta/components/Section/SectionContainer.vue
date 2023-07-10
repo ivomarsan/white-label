@@ -95,14 +95,13 @@ const isColumnsReversed = computed<boolean>(() => {
 <style module>
 .container {
   @apply flex justify-center;
-  @apply py-28;
 
   background-color: v-bind(backgroundColor);
 }
 
 .inner {
   @apply flex justify-between;
-  @apply gap-28;
+  @apply gap-28 py-28;
 
   max-width: var(--max-content-width);
 
