@@ -50,7 +50,7 @@ const isColumnsReversed = computed<boolean>(() => {
         ]"
       >
         <slot name="inner">
-          <div>
+          <div :class="$style.column">
             <slot :name="isColumnsReversed ? 'last-column' : 'first-column'">
               <slot name="title">
                 <SectionTitle :title="title" />
@@ -81,7 +81,7 @@ const isColumnsReversed = computed<boolean>(() => {
             </slot>
           </div>
 
-          <div>
+          <div :class="$style.column">
             <slot :name="isColumnsReversed ? 'first-column' : 'last-column'">
               <slot name="image"> </slot>
             </slot>
@@ -108,6 +108,26 @@ const isColumnsReversed = computed<boolean>(() => {
   &.isColumnsReversed {
     flex-direction: row-reverse;
   }
+
+  @media only screen and (max-width: 1700px) {
+    @apply gap-12 p-12;
+  }
+
+  @media only screen and (max-width: 800px) {
+    @apply gap-8 p-8;
+  }
+
+  @media only screen and (max-width: 600px) {
+    @apply flex-col;
+
+    &.isColumnsReversed {
+      @apply flex-col;
+    }
+  }
+}
+
+.column {
+  min-width: 30%
 }
 
 .description {
