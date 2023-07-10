@@ -76,5 +76,6 @@ const { themeColors } = useTheme();
 
 .bottomLine {
   color: v-bind('themeColors.secondary');
+  text-align: center;
 }
 </style>
