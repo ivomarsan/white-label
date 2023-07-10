@@ -63,10 +63,10 @@ function setPreviousItem() {
     return;
   }
 
-  const lastItem = items?.length - 1;
+  const lastItemIndex = items?.length - 1;
 
   if (currentCaroulselItemIndex.value === 0) {
-    currentCaroulselItemIndex.value = lastItem;
+    currentCaroulselItemIndex.value = lastItemIndex;
   } else {
     currentCaroulselItemIndex.value--;
   }
@@ -77,9 +77,9 @@ function setNextItem() {
     return;
   }
 
-  const lastItem = items?.length - 1;
+  const lastItemIndex = items?.length - 1;
 
-  if (currentCaroulselItemIndex.value === lastItem) {
+  if (currentCaroulselItemIndex.value === lastItemIndex) {
     currentCaroulselItemIndex.value = 0;
   } else {
     currentCaroulselItemIndex.value++;
