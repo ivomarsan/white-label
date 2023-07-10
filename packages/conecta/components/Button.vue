@@ -26,7 +26,7 @@ const componentName = computed<ConcreteComponent | string>(() => {
     return resolveComponent('NuxtLink');
   }
 
-  return resolveComponent(tag || 'button');
+  return tag || 'button';
 });
 
 const isOutline = computed<boolean>(() => {
