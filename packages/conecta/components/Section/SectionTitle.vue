@@ -26,7 +26,7 @@ const hasTitle = computed<boolean>(() => {
 
 <style module>
 .title {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold text-center;
 
   color: v-bind('themeColors.primary');
 }
