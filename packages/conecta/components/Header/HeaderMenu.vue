@@ -7,6 +7,11 @@
         </NuxtLink>
       </li>
       <li>
+        <NuxtLink :to="{ path: '/', hash: '#formacao-online' }">
+          <span>Formação Online</span>
+        </NuxtLink>
+      </li>
+      <li>
         <NuxtLink :to="{ path: '/', hash: '#parcerias' }">
           <span>Parcerias</span>
         </NuxtLink>
