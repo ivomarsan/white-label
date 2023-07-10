@@ -100,18 +100,48 @@ const posts = [
 
 .carousel {
   @apply gap-16;
+
+  @media only screen and (max-width: 1400px) {
+    @apply px-0;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    @apply gap-12;
+  }
+
+  @media only screen and (max-width: 800px) {
+    @apply flex-wrap justify-center;
+  }
 }
 
 .post {
   @apply flex flex-col;
 
   max-width: 350px;
+
+  @media only screen and (max-width: 1400px) {
+    max-width: 300px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    max-width: 200px;
+  }
 }
 
 .postImage {
   max-width: 350px;
   height: 350px;
   width: 100%;
+
+  @media only screen and (max-width: 1400px) {
+    max-width: 300px;
+    height: 300px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    max-width: 200px;
+    height: 200px;
+  }
 }
 
 .postTitle {
@@ -124,6 +154,14 @@ const posts = [
 .postDescription {
   @apply text-xl;
   @apply m-2;
+
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 }
 
 .buttonWrapper {
