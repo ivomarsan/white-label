@@ -12,6 +12,7 @@ const { items } = defineProps<Props>();
 
 <template>
   <Carousel
+    autoplay
     blur-inactives
     expand-active
     :items="items"
