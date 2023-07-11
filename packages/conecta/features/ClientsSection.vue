@@ -34,7 +34,7 @@ const brandList = [
 ];
 
 function getBrand(fileName: string) {
-  return new URL(`../src/images/partners/${fileName}`, import.meta.url).href
+  return new URL(`../src/images/clients/${fileName}`, import.meta.url).href
 }
 </script>
 
