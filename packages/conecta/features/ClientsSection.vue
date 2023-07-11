@@ -5,7 +5,7 @@ import { useTheme } from '@/composables';
 
 const { themeColors } = useTheme();
 
-const partners = [
+const brandList = [
   'amazon.webp',
   'fast-shop.png',
   'natura.webp',
@@ -33,8 +33,8 @@ const partners = [
   'ambev.webp',
 ];
 
-function getBrand(partnerName: string) {
-  return new URL(`../src/images/partners/${partnerName}`, import.meta.url).href
+function getBrand(fileName: string) {
+  return new URL(`../src/images/partners/${fileName}`, import.meta.url).href
 }
 </script>
 
@@ -54,11 +54,11 @@ function getBrand(partnerName: string) {
         <div :class="$style.listWrapper">
           <div :class="$style.list">
             <template
-              v-for="(partner, index) in partners"
+              v-for="(brand, index) in brandList"
               :key="index"
             >
               <div :class="$style.item">
-                <img :src="getBrand(partner)" />
+                <img :src="getBrand(brand)" />
               </div>
             </template>
           </div>
