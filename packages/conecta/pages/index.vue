@@ -6,6 +6,8 @@ import MissionSection from '@/features/MissionSection.vue';
 import ServicesSection from '@/features/ServicesSection.vue';
 import AboutSection from '@/features/AboutSection.vue';
 import TestimonialsSection from '@/features/TestimonialsSection.vue';
+import ClientsSection from '@/features/ClientsSection.vue';
+import PartnersSection from '@/features/PartnersSection.vue';
 </script>
 
 <template>
@@ -17,8 +19,12 @@ import TestimonialsSection from '@/features/TestimonialsSection.vue';
 
     <MissionSection />
 
-    <ServicesSection />
+    <ClientsSection />
 
+    <ServicesSection />
+    
+    <PartnersSection />
+    
     <TestimonialsSection />
 
     <BlogSection />
