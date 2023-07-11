@@ -46,7 +46,6 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-      - run: mv -f packages/conecta/* .
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
