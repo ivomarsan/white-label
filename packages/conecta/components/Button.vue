@@ -5,6 +5,7 @@ import type { ConcreteComponent } from 'vue';
 
 interface Props {
   backgroundColor?: string;
+  outlineColor?: string;
   textColor?: string;
   outline?: boolean;
   enableHoverEffect?: boolean;
@@ -14,6 +15,7 @@ interface Props {
 
 const {
   backgroundColor = '#338033',
+  outlineColor = '#cccccc',
   textColor = '#cccccc',
   outline = false,
   enableHoverEffect = false,
@@ -69,7 +71,7 @@ const isHoverEffectEnabled = computed<boolean>(() => {
   background-color: v-bind(backgroundColor);
   position: relative;
   color: v-bind(textColor);
-  min-width: 10rem;
+  min-width: 4rem;
   min-height: 4rem;
   border: none;
   font-size: 18px;
@@ -86,7 +88,7 @@ const isHoverEffectEnabled = computed<boolean>(() => {
   }
 
   &.isOutline {
-    border: 1px solid v-bind(backgroundColor);
+    border: 1px solid v-bind(outlineColor);
     background-color: transparent;
 
     &:hover {
