@@ -31,6 +31,13 @@ const posts = [
     mediaUrl: 'images/blog/post-3.jpg',
     url: '/blog/post-3',
   },
+  {
+    title: 'NR10 é obrigatório e salva vidas',
+    description:
+      'Desde 2013 a Abracopel (Associação Brasileira de Conscientização para os Perigos da Eletricidade), avalia os dados de acidentes de origem elétrica e registrou em 2019 um aumento de 12% comparado a 2018 em relação as mortes causadas por choque elétrico e 23% no aumento de casos de incêndios originados em sobrecargas de energia e posterior curto-circuito, este é um cenário muito preocupante que requer atenção de profissionais e empresas que atuam na área.',
+    mediaUrl: 'images/blog/post-4.jpg',
+    url: '/blog/post-4',
+  },
 ];
 </script>
 
