@@ -64,7 +64,7 @@ function getBrand(fileName: string) {
 
   overflow: hidden;
   position: relative;
-  max-width: 100vw;
+  max-width: calc(90vw - 6rem);
 }
 
 .title {
