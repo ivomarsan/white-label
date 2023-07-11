@@ -75,7 +75,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./packages/conecta/.nuxt/dist
+          path: ./packages/conecta/.output/public
 
   # Deployment job
   deploy:
