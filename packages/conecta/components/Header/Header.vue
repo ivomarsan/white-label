@@ -34,7 +34,9 @@ const isMobileMenuVisible = computed<boolean>(() => {
 </script>
 
 <template>
-  <section :class="$style.container">
+  <section
+    :class="[$style.container, { [$style.isCoverVisible]: isCoverVisible }]"
+  >
     <header
       :class="[
         $style.header,
@@ -94,6 +96,10 @@ const isMobileMenuVisible = computed<boolean>(() => {
   @apply flex flex-col items-center;
 
   background-color: v-bind('themeColors.primary');
+
+  &:not(.isCoverVisible) {
+    padding-bottom: var(--header-height);
+  }
 }
 
 .header {
@@ -101,7 +107,6 @@ const isMobileMenuVisible = computed<boolean>(() => {
 
   height: var(--header-height);
   background-color: v-bind('themeColors.primary');
-
   position: fixed;
   z-index: 9;
 
