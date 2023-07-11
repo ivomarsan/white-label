@@ -127,11 +127,15 @@ const isColumnsReversed = computed<boolean>(() => {
 }
 
 .column {
-  min-width: 30%
+  min-width: 30%;
 }
 
 .description {
   @apply mt-8 text-xl;
+
+  @media only screen and (max-width: 800px) {
+    @apply text-base;
+  }
 }
 
 .descriptionList {

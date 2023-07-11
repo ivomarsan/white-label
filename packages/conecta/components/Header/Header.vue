@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useTheme, useBreakpoints } from '@/composables';
-import type { Props as MobileMenuProps } from '@/components/Header/HeaderMobileMenu.vue'
+import type { Props as MobileMenuProps } from '@/components/Header/HeaderMobileMenu.vue';
 
 const { themeColors } = useTheme();
-const { width } = useBreakpoints()
+const { width } = useBreakpoints();
 
 interface Props {
   fixed?: boolean;
@@ -18,7 +18,7 @@ const menuItems: MobileMenuProps['menuItems'] = [
   { title: 'Parcerias', url: { path: '/', hash: '#parcerias' } },
   { title: 'Cursos', url: { path: '/', hash: '#cursos' } },
   { title: 'Blog', url: { path: '/', hash: '#blog' } },
-]
+];
 
 const isFixed = computed<boolean>(() => {
   return !!fixed;
@@ -30,7 +30,7 @@ const isCoverVisible = computed<boolean>(() => {
 
 const isMobileMenuVisible = computed<boolean>(() => {
   return width.value <= 1200;
-})
+});
 </script>
 
 <template>
@@ -44,11 +44,18 @@ const isMobileMenuVisible = computed<boolean>(() => {
       ]"
     >
       <div :class="$style.inner">
-        <HeaderMobileMenu :class="$style.menu" v-if="isMobileMenuVisible" :menu-items="menuItems" />
+        <HeaderMobileMenu
+          v-if="isMobileMenuVisible"
+          :class="$style.menu"
+          :menu-items="menuItems"
+        />
 
         <HeaderLogo />
 
-        <HeaderMenu :class="$style.menu" v-if="!isMobileMenuVisible" />
+        <HeaderMenu
+          v-if="!isMobileMenuVisible"
+          :class="$style.menu"
+        />
 
         <HeaderCTA />
       </div>
@@ -120,12 +127,20 @@ const isMobileMenuVisible = computed<boolean>(() => {
   @apply flex flex-col items-center;
   @apply w-full;
   @apply mb-40 mt-40 px-8;
+
+  @media only screen and (max-width: 800px) {
+    @apply mb-32 mt-32 px-8;
+  }
 }
 
 .title {
   @apply text-5xl font-bold;
 
   color: v-bind('themeColors.secondary');
+
+  @media only screen and (max-width: 800px) {
+    @apply text-4xl;
+  }
 }
 
 .subtitle {
@@ -133,6 +148,10 @@ const isMobileMenuVisible = computed<boolean>(() => {
   @apply mt-8;
 
   color: v-bind('themeColors.secondary');
+
+  @media only screen and (max-width: 800px) {
+    @apply text-lg;
+  }
 }
 
 .menu {

@@ -24,7 +24,7 @@ const brandList = [
 ];
 
 function getBrand(fileName: string) {
-  return new URL(`../src/images/partners/${fileName}`, import.meta.url).href
+  return new URL(`../src/images/partners/${fileName}`, import.meta.url).href;
 }
 </script>
 
@@ -70,7 +70,11 @@ function getBrand(fileName: string) {
 .title {
   @apply mb-16;
 
-  color: v-bind('themeColors.secondary')
+  color: v-bind('themeColors.secondary');
+
+  @media only screen and (max-width: 800px) {
+    @apply mb-12;
+  }
 }
 
 .listWrapper {
@@ -84,8 +88,12 @@ function getBrand(fileName: string) {
 
   &::before {
     position: absolute;
-    background-image: linear-gradient(90deg, v-bind('themeColors.primary') 31.3%, rgba(3, 1, 64, 0) 100%);
-    content: "";
+    background-image: linear-gradient(
+      90deg,
+      v-bind('themeColors.primary') 31.3%,
+      rgba(3, 1, 64, 0) 100%
+    );
+    content: '';
     height: 100%;
     width: 25%;
     pointer-events: none;
@@ -95,8 +103,12 @@ function getBrand(fileName: string) {
 
   &::after {
     position: absolute;
-    background-image: linear-gradient(90deg, v-bind('themeColors.primary') 31.3%, rgba(3, 1, 64, 0) 100%);
-    content: "";
+    background-image: linear-gradient(
+      90deg,
+      v-bind('themeColors.primary') 31.3%,
+      rgba(3, 1, 64, 0) 100%
+    );
+    content: '';
     height: 100%;
     width: 25%;
     pointer-events: none;
@@ -113,6 +125,10 @@ function getBrand(fileName: string) {
 
   & img {
     height: 100%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 10rem;
   }
 }
 

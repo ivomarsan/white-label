@@ -26,8 +26,12 @@ const hasTitle = computed<boolean>(() => {
 
 <style module>
 .title {
-  @apply text-3xl font-bold text-center;
+  @apply text-center text-3xl font-bold;
 
   color: v-bind('themeColors.primary');
+
+  @media only screen and (max-width: 800px) {
+    @apply text-2xl;
+  }
 }
 </style>
