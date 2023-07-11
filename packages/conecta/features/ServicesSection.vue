@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue';
 import SectionContainer from '@/components/Section/SectionContainer.vue';
-
 import { useTheme } from '@/composables';
 
 const { themeColors } = useTheme();
@@ -28,7 +27,7 @@ function getIcon(iconName: string) {
 <template>
   <SectionContainer
     id="cursos"
-    background-color="#afbedb"
+    :background-color="themeColors.base"
     :class="$style.servicesSection"
   >
     <template #inner>
