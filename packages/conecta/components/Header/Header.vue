@@ -79,7 +79,7 @@ const isCoverVisible = computed<boolean>(() => {
   height: var(--header-height);
   background-color: v-bind('themeColors.primary');
 
-  position: absolute;
+  position: fixed;
   z-index: 9;
 
   &.isFixed {
