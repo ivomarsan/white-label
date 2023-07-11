@@ -7,7 +7,7 @@ import Header from '@/components/Header/Header.vue';
   <main>
     <Header hide-cover />
 
-    <BlogSection />
+    <BlogSection unlimited />
   </main>
 </template>
 
