@@ -21,7 +21,7 @@ const description =
       <ImageContainer
         border="left"
         box-shadow="on"
-        src="images/helping-hands.jpg"
+        src="images/about.png"
       />
     </template>
   </SectionContainer>
