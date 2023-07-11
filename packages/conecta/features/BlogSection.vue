@@ -6,6 +6,13 @@ import { useTheme } from '@/composables';
 import { truncate } from '@/shared';
 import Button from '@/components/Button.vue';
 
+interface Props {
+  limit?: number;
+  unlimited?: boolean;
+}
+
+const { limit = 3, unlimited } = defineProps<Props>();
+
 const { themeColors } = useTheme();
 
 const posts = [
@@ -39,6 +46,18 @@ const posts = [
     url: '/blog/post-4',
   },
 ];
+
+const isPostsListUnlimited = computed<boolean>(() => {
+  return !!unlimited;
+});
+
+const postsList = computed<typeof posts>(() => {
+  if (isPostsListUnlimited.value) {
+    return posts;
+  }
+
+  return posts.slice(0, limit);
+});
 </script>
 
 <template>
@@ -56,7 +75,7 @@ const posts = [
 
         <Carousel
           :class="$style.carousel"
-          :items="posts"
+          :items="postsList"
         >
           <template #item="{ title, description, mediaUrl, url }">
             <NuxtLink
@@ -76,7 +95,10 @@ const posts = [
           </template>
         </Carousel>
 
-        <div :class="$style.buttonWrapper">
+        <div
+          v-if="!isPostsListUnlimited"
+          :class="$style.buttonWrapper"
+        >
           <Button
             :background-color="themeColors.primary"
             :class="$style.button"
