@@ -12,7 +12,7 @@ const services = [
     icon: 'electricity-hazard',
     description: 'Segurança em instalações e serviços em eletricidade',
   },
-  { icon: 'fire-extinguisher', description: 'Proteção e combate a incêndio' },
+  { icon: 'fire-extinguisher', description: 'Brigada de incêndio' },
   { icon: 'claustrophobia', description: 'Trabalho em espaços confinados' },
   { icon: 'folding-ladder', description: 'Trabalho em altura' },
 ];

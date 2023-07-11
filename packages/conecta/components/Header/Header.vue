@@ -46,7 +46,7 @@ const isCoverVisible = computed<boolean>(() => {
       >
         <div :class="$style.content">
           <h1 :class="$style.title">
-            <span>Treinamentos para vida</span>
+            <span>Treinamentos para a vida</span>
           </h1>
 
           <h2 :class="$style.subtitle">
