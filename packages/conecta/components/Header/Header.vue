@@ -64,7 +64,7 @@ const isCoverVisible = computed<boolean>(() => {
 
 <style module>
 :root {
-  --header-height: 7rem;
+  --header-height: 6rem;
 }
 
 .container {
