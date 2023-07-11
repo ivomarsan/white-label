@@ -19,11 +19,11 @@ import PartnersSection from '@/features/PartnersSection.vue';
 
     <ClientsSection />
 
+    <TestimonialsSection />
+    
     <ServicesSection />
     
     <PartnersSection />
-
-    <TestimonialsSection />
 
     <BlogSection />
   </main>
