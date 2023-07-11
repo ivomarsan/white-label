@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import SectionContainer from '@/components/Section/SectionContainer.vue';
 import Testimonials from '@/components/Testimonials.vue';
+import { useTheme } from '@/composables';
+
+const { themeColors } = useTheme();
 
 const testimonials = [
   {
@@ -24,7 +27,7 @@ const testimonials = [
 
 <template>
   <SectionContainer
-    background-color="#05005B"
+    :background-color="themeColors.primary"
     :class="$style.testimonialsSection"
   >
     <template #inner>
