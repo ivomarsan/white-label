@@ -29,10 +29,10 @@ function getIcon(iconName: string) {
   <SectionContainer
     id="cursos"
     background-color="#afbedb"
-    :class="$style.blogSection"
+    :class="$style.servicesSection"
   >
     <template #inner>
-      <div :class="$style.blogSectionInner">
+      <div :class="$style.servicesSectionInner">
         <SectionTitle
           :class="$style.title"
           title="Nossos serviços"
@@ -60,7 +60,7 @@ function getIcon(iconName: string) {
 </template>
 
 <style module>
-.blogSectionInner {
+.servicesSectionInner {
   @apply flex flex-col items-center;
 }
 
