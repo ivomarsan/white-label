@@ -61,7 +61,7 @@ const { themeColors } = useTheme();
 <style module>
 .image {
   width: 100%;
-  max-width: 150px;
+  max-width: 250px;
   aspect-ratio: 1 / 1;
 
   &.isInactive {
@@ -80,6 +80,10 @@ const { themeColors } = useTheme();
       transform: scale(1.15);
       transition: transform 300ms ease-in-out;
     }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    max-width: 150px;
   }
 }
 

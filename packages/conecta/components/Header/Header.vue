@@ -103,7 +103,7 @@ const isCoverVisible = computed<boolean>(() => {
 .content {
   @apply flex flex-col items-center;
   @apply w-full;
-  @apply mb-40 mt-40;
+  @apply mb-40 mt-40 px-8;
 }
 
 .title {
