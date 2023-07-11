@@ -22,28 +22,28 @@ const posts = [
     description:
       'No mês de setembro, o dia do cliente é comemorado no dia 15 e é com muito orgulho que celebramos essa data com um dos',
     mediaUrl: 'images/blog/post-1.jpg',
-    url: '/blog/post-1',
+    url: '/blog/quando-a-relacao-entre-fornecedor-e-cliente-e-de-parceria-temos-o-verdadeiro-sucesso',
   },
   {
     title: '5 dicas de como manter o seu colaborador motivado',
     description:
       '1. Deixe claro para o colaborador qual o papel dele no propósito da empresa!  Um dos primeiros passos para incentivar funcionários é fazer com que',
     mediaUrl: 'images/blog/post-2.jpg',
-    url: '/blog/post-2',
+    url: '/blog/5-dicas-de-como-manter-o-seu-colaborador-motivado',
   },
   {
     title: 'Como utilizar as luzes de natal com segurança',
     description:
       'Na época do natal nossas casas ganham vida a mais, a empolgação das crianças ao escrever cartinhas, fazer pão de mel em família e decorar',
     mediaUrl: 'images/blog/post-3.jpg',
-    url: '/blog/post-3',
+    url: '/blog/como-utilizar-as-luzes-de-natal-com-seguranca',
   },
   {
     title: 'NR10 é obrigatório e salva vidas',
     description:
       'Desde 2013 a Abracopel (Associação Brasileira de Conscientização para os Perigos da Eletricidade), avalia os dados de acidentes de origem elétrica e registrou em 2019 um aumento de 12% comparado a 2018 em relação as mortes causadas por choque elétrico e 23% no aumento de casos de incêndios originados em sobrecargas de energia e posterior curto-circuito, este é um cenário muito preocupante que requer atenção de profissionais e empresas que atuam na área.',
     mediaUrl: 'images/blog/post-4.jpg',
-    url: '/blog/post-4',
+    url: '/blog/nr10-e-obrigatorio-e-salva-vidas',
   },
 ];
 
