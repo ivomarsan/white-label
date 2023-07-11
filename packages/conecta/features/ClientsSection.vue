@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import SectionContainer from '@/components/Section/SectionContainer.vue';
-
 import { useTheme } from '@/composables';
 
 const { themeColors } = useTheme();
@@ -40,8 +39,8 @@ function getBrand(fileName: string) {
 
 <template>
   <SectionContainer
-    id="parcerias"
-    background-color="#afbedb"
+    id="clientes"
+    :background-color="themeColors.base"
     :class="$style.clientsSection"
   >
     <template #inner>
@@ -77,7 +76,7 @@ function getBrand(fileName: string) {
 }
 
 .title {
-  @apply mb-16;
+  @apply mb-16 px-16;
 }
 
 .listWrapper {
@@ -87,7 +86,7 @@ function getBrand(fileName: string) {
 .list {
   @apply flex items-center;
 
-  animation: 12s linear 0s infinite normal none running move-left;
+  animation: 20s linear 0s infinite normal none running move-left;
 
   &::before {
     position: absolute;
@@ -120,10 +119,6 @@ function getBrand(fileName: string) {
 
   & img {
     height: 100%;
-  }
-
-  &:hover {
-
   }
 }
 
