@@ -6,15 +6,15 @@ import { useTheme } from '@/composables';
 const { themeColors } = useTheme();
 
 const services = [
+  { icon: 'fire-extinguisher', description: 'Brigada de incêndio' },
+  { icon: 'claustrophobia', description: 'Trabalho em espaços confinados' },
+  { icon: 'folding-ladder', description: 'Trabalho em altura' },
   { icon: 'safe-helmet', description: 'CIPA' },
   { icon: 'doctors-bag', description: 'Primeiros socorros' },
   {
     icon: 'electricity-hazard',
     description: 'Segurança em instalações e serviços em eletricidade',
   },
-  { icon: 'fire-extinguisher', description: 'Brigada de incêndio' },
-  { icon: 'claustrophobia', description: 'Trabalho em espaços confinados' },
-  { icon: 'folding-ladder', description: 'Trabalho em altura' },
 ];
 
 function getIcon(iconName: string) {
