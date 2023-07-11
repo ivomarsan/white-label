@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { useTheme } from '@/composables';
+import { useTheme, useBreakpoints } from '@/composables';
+import type { Props as MobileMenuProps } from '@/components/Header/HeaderMobileMenu.vue'
 
 const { themeColors } = useTheme();
+const { width } = useBreakpoints()
 
 interface Props {
   fixed?: boolean;
@@ -10,6 +12,14 @@ interface Props {
 
 const { fixed, hideCover } = defineProps<Props>();
 
+const menuItems: MobileMenuProps['menuItems'] = [
+  { title: 'Quem Somos', url: { path: '/', hash: '#quem-somos' } },
+  { title: 'Formação Online', url: { path: '/', hash: '#formacao-online' } },
+  { title: 'Parcerias', url: { path: '/', hash: '#parcerias' } },
+  { title: 'Cursos', url: { path: '/', hash: '#cursos' } },
+  { title: 'Blog', url: { path: '/', hash: '#blog' } },
+]
+
 const isFixed = computed<boolean>(() => {
   return !!fixed;
 });
@@ -17,6 +27,10 @@ const isFixed = computed<boolean>(() => {
 const isCoverVisible = computed<boolean>(() => {
   return !hideCover;
 });
+
+const isMobileMenuVisible = computed<boolean>(() => {
+  return width.value <= 1200;
+})
 </script>
 
 <template>
@@ -30,9 +44,11 @@ const isCoverVisible = computed<boolean>(() => {
       ]"
     >
       <div :class="$style.inner">
+        <HeaderMobileMenu :class="$style.menu" v-if="isMobileMenuVisible" :menu-items="menuItems" />
+
         <HeaderLogo />
 
-        <HeaderMenu :class="$style.menu" />
+        <HeaderMenu :class="$style.menu" v-if="!isMobileMenuVisible" />
 
         <HeaderCTA />
       </div>
