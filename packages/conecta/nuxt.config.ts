@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Conecta',
     },
-    baseURL: '/white-label/conecta',
+    baseURL: '/white-label',
     buildAssetsDir: '/_nuxt/',
   },
 
