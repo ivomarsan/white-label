@@ -38,7 +38,9 @@ const { themeColors } = useTheme();
 
     <div :class="$style.bottomLine">
       <span
-        >Direitos Reservados ©️ | Conecta – CNPJ: 00.000.000/0001-00 | Rua Caramuru, 515, Diadema - SP | <a href="tel:1159900462">(11) 5990-0462</a></span
+        >Direitos Reservados ©️ | Conecta – CNPJ: 43.474.245/0001-63 | Rua
+        Caramuru, 515, Diadema - SP |
+        <a href="tel:1159900462">(11) 5990-0462</a></span
       >
     </div>
   </footer>
