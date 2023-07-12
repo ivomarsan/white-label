@@ -130,10 +130,6 @@ function getBrand(fileName: string) {
 
   width: 16rem;
 
-  & img {
-    height: 100%;
-  }
-
   @media only screen and (max-width: 800px) {
     width: 10rem;
   }
