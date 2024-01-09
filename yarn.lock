@@ -3138,7 +3138,7 @@ __metadata:
     postcss-html: 1.5.0
     postcss-nesting: 12.0.2
     prettier: 2.8.8
-    prettier-plugin-tailwindcss: 0.4.0
+    prettier-plugin-tailwindcss: 0.5.11
     stylelint: 15.11.0
     stylelint-config-recommended-vue: 1.5.0
     stylelint-config-standard: 34.0.0
@@ -11435,16 +11435,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:0.4.0":
-  version: 0.4.0
-  resolution: "prettier-plugin-tailwindcss@npm:0.4.0"
+"prettier-plugin-tailwindcss@npm:0.5.11":
+  version: 0.5.11
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.11"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
     "@shopify/prettier-plugin-liquid": "*"
-    "@shufo/prettier-plugin-blade": "*"
     "@trivago/prettier-plugin-sort-imports": "*"
-    prettier: ^2.2 || ^3.0
+    prettier: ^3.0
     prettier-plugin-astro: "*"
     prettier-plugin-css-order: "*"
     prettier-plugin-import-sort: "*"
@@ -11454,15 +11453,12 @@ __metadata:
     prettier-plugin-organize-imports: "*"
     prettier-plugin-style-order: "*"
     prettier-plugin-svelte: "*"
-    prettier-plugin-twig-melody: "*"
   peerDependenciesMeta:
     "@ianvs/prettier-plugin-sort-imports":
       optional: true
     "@prettier/plugin-pug":
       optional: true
     "@shopify/prettier-plugin-liquid":
-      optional: true
-    "@shufo/prettier-plugin-blade":
       optional: true
     "@trivago/prettier-plugin-sort-imports":
       optional: true
@@ -11486,7 +11482,7 @@ __metadata:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: 900558ea1593d9ea7723bcc2c2e391f844decb5bdd712a55dd335652f2a05418cef779b8346eabfacbfbd4ea2a13d0cf637570e804db5e22550c63a836a5eb22
+  checksum: 450646db10dbcec76fe6be7bfc85e2e3c6bd1a6c9026637fc9c7f9a0882d8adf6b6fb589be6d24e6a4868772d44b55278a3a39760aa9feee2cf281db9215c0f6
   languageName: node
   linkType: hard
 
