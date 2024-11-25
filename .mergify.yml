@@ -2,8 +2,18 @@
 
 queue_rules:
   - name: default
-    conditions:
+    queue_conditions:
+      - base~=(develop|main)
+      - '#approved-reviews-by>=1'
+      - '#changes-requested-reviews-by=0'
+      - -conflict
+      - title~=^(?!.*delayed merge).*$
+      - title~=^(?!.*WIP).*$
+      - check-success~=^(Vercel).*$
+    merge_conditions:
       - check-success~=^(Vercel).*$ # Needs all REQUIRED Vercel checks
+
+    merge_method: merge
 
 pull_request_rules:
   - name: automate merge workflow
@@ -22,16 +32,14 @@ pull_request_rules:
 #        users_from_teams:
 #          - '@Talentify/front-end'
       queue:
-        method: merge
-        name: default
-
   - name: ask to resolve conflict
     conditions:
       - conflict
       - -merged
     actions:
       comment:
-        message: '@{{author}}, essa PR possui conflitos com o branch base. Por favor, resolver.'
+        message: '@{{author}}, essa PR possui conflitos com o branch base. Por favor,
+          resolver.'
 
   - name: auto assign author to PR
     conditions:
