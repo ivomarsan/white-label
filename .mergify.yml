@@ -2,7 +2,7 @@
 
 queue_rules:
   - name: default
-    conditions:
+    merge_conditions:
       - check-success~=^(Vercel).*$ # Needs all REQUIRED Vercel checks
 
 pull_request_rules:
